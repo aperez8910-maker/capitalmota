@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = ["Collection", "About", "Culture", "Contact"];
 
@@ -9,9 +10,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-3xl tracking-widest text-foreground">
-          CAPITAL <span className="text-primary">MOTA</span>
+      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+        <a href="#" className="flex items-center">
+          <img src={logo} alt="Capital Mota" className="h-10 object-contain" />
         </a>
 
         {/* Desktop */}
@@ -33,7 +34,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-foreground"
@@ -42,7 +42,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
