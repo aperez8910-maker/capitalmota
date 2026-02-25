@@ -6,12 +6,12 @@ import teeGold from "@/assets/tee-gold-banner.png";
 import teeArch from "@/assets/tee-arch-design.png";
 import teeRed from "@/assets/tee-red-capital.png";
 import teePink from "@/assets/tee-pink-kids.png";
-import cwWhiteBlack from "@/assets/colorway-white-black.jpg";
-import cwGreenGold from "@/assets/colorway-green-gold.jpg";
-import cwBlackRed from "@/assets/colorway-black-red.jpg";
-import cwGrayNavy from "@/assets/colorway-gray-navy.jpg";
-import cwTanBrown from "@/assets/colorway-tan-brown.jpg";
-import cwBurgundy from "@/assets/colorway-burgundy.jpg";
+import cwWhite from "@/assets/colorway-white.jpg";
+import cwGreen from "@/assets/colorway-green.jpg";
+import cwBlack from "@/assets/colorway-black.jpg";
+import cwGray from "@/assets/colorway-gray.jpg";
+import cwBurgundy from "@/assets/colorway-burgundy2.jpg";
+import cwTan from "@/assets/colorway-tan.jpg";
 
 const currentProducts = [
   { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
@@ -23,19 +23,18 @@ const currentProducts = [
 ];
 
 const colorways = [
-  { image: cwWhiteBlack, name: "WHITE / BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGreenGold, name: "FOREST GREEN / GOLD", price: "$60.00", tag: "COLORWAY" },
-  { image: cwBlackRed, name: "BLACK / RED BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGrayNavy, name: "HEATHER GRAY / NAVY", price: "$55.00", tag: "COLORWAY" },
-  { image: cwTanBrown, name: "SAND / EARTH TONE", price: "$55.00", tag: "COLORWAY" },
-  { image: cwBurgundy, name: "BURGUNDY / CREAM", price: "$55.00", tag: "COLORWAY" },
+  { image: cwWhite, name: "WHITE BOX LOGO", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGreen, name: "FOREST GREEN", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBlack, name: "BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGray, name: "HEATHER GRAY", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBurgundy, name: "BURGUNDY", price: "$55.00", tag: "COLORWAY" },
+  { image: cwTan, name: "SAND / TAN", price: "$55.00", tag: "COLORWAY" },
 ];
 
 const Collection = () => {
   return (
     <section id="collection" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        {/* Current Collection */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +57,6 @@ const Collection = () => {
           ))}
         </div>
 
-        {/* New Colorways */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
