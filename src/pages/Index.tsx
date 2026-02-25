@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Collection from "@/components/Collection";
-import Lookbook from "@/components/Lookbook";
 import About from "@/components/About";
 import CultureBanner from "@/components/CultureBanner";
 import Footer from "@/components/Footer";
@@ -13,7 +12,6 @@ const Index = () => {
       <Hero />
       <CultureBanner />
       <Collection />
-      <Lookbook />
       <About />
       <CultureBanner />
       <Footer />
