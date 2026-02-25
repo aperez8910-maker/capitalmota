@@ -6,26 +6,36 @@ import teeGold from "@/assets/tee-gold-banner.png";
 import teeArch from "@/assets/tee-arch-design.png";
 import teeRed from "@/assets/tee-red-capital.png";
 import teePink from "@/assets/tee-pink-kids.png";
-import mockupBlack from "@/assets/mockup-black-box.jpg";
-import mockupGreen from "@/assets/mockup-green-gold.jpg";
-import mockupGray from "@/assets/mockup-gray-red.jpg";
+import cwWhiteBlack from "@/assets/colorway-white-black.jpg";
+import cwGreenGold from "@/assets/colorway-green-gold.jpg";
+import cwBlackRed from "@/assets/colorway-black-red.jpg";
+import cwGrayNavy from "@/assets/colorway-gray-navy.jpg";
+import cwTanBrown from "@/assets/colorway-tan-brown.jpg";
+import cwBurgundy from "@/assets/colorway-burgundy.jpg";
 
-const products = [
+const currentProducts = [
   { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
   { image: teeNavy, name: "NAVY BOX LOGO CREW", price: "$55.00", tag: "OG" },
   { image: teeGold, name: "GOLD BANNER EDITION", price: "$60.00", tag: "420" },
   { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00" },
   { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW" },
   { image: teePink, name: "PINK KIDS EDITION", price: "$35.00" },
-  { image: mockupBlack, name: "CAPITOL DOME TEE — BLACK", price: "$55.00", tag: "CONCEPT" },
-  { image: mockupGreen, name: "FOREST GREEN AUSTIN TEE", price: "$60.00", tag: "CONCEPT" },
-  { image: mockupGray, name: "CHARCOAL SPLIT TEE", price: "$55.00", tag: "CONCEPT" },
+];
+
+const colorways = [
+  { image: cwWhiteBlack, name: "WHITE / BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGreenGold, name: "FOREST GREEN / GOLD", price: "$60.00", tag: "COLORWAY" },
+  { image: cwBlackRed, name: "BLACK / RED BOX LOGO", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGrayNavy, name: "HEATHER GRAY / NAVY", price: "$55.00", tag: "COLORWAY" },
+  { image: cwTanBrown, name: "SAND / EARTH TONE", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBurgundy, name: "BURGUNDY / CREAM", price: "$55.00", tag: "COLORWAY" },
 ];
 
 const Collection = () => {
   return (
     <section id="collection" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
+        {/* Current Collection */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +52,31 @@ const Collection = () => {
           <div className="w-16 h-px bg-accent mx-auto mt-6" />
         </motion.div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 mb-32">
+          {currentProducts.map((product, i) => (
+            <ProductCard key={product.name} {...product} index={i} />
+          ))}
+        </div>
+
+        {/* New Colorways */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-3">
+            New Colorways
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
+            COMING SOON
+          </h2>
+          <div className="w-16 h-px bg-primary mx-auto mt-6" />
+        </motion.div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
-          {products.map((product, i) => (
+          {colorways.map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
         </div>
