@@ -6,6 +6,9 @@ import teeGold from "@/assets/tee-gold-banner.png";
 import teeArch from "@/assets/tee-arch-design.png";
 import teeRed from "@/assets/tee-red-capital.png";
 import teePink from "@/assets/tee-pink-kids.png";
+import mockupBlack from "@/assets/mockup-black-box.jpg";
+import mockupGreen from "@/assets/mockup-green-gold.jpg";
+import mockupGray from "@/assets/mockup-gray-red.jpg";
 
 const products = [
   { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
@@ -14,6 +17,9 @@ const products = [
   { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00" },
   { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW" },
   { image: teePink, name: "PINK KIDS EDITION", price: "$35.00" },
+  { image: mockupBlack, name: "CAPITOL DOME TEE — BLACK", price: "$55.00", tag: "CONCEPT" },
+  { image: mockupGreen, name: "FOREST GREEN AUSTIN TEE", price: "$60.00", tag: "CONCEPT" },
+  { image: mockupGray, name: "CHARCOAL SPLIT TEE", price: "$55.00", tag: "CONCEPT" },
 ];
 
 const Collection = () => {
