@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import ProductCard from "./ProductCard";
-import tee1 from "@/assets/product-tee-1.jpg";
-import tee2 from "@/assets/product-tee-2.jpg";
-import tee3 from "@/assets/product-tee-3.jpg";
+import teeWhite from "@/assets/tee-white-vertical.png";
+import teeNavy from "@/assets/tee-navy-box.png";
+import teeGold from "@/assets/tee-gold-banner.png";
+import teeArch from "@/assets/tee-arch-design.png";
+import teeRed from "@/assets/tee-red-capital.png";
+import teePink from "@/assets/tee-pink-kids.png";
 
 const products = [
-  { image: tee1, name: "MIDNIGHT HEAVYWEIGHT TEE", price: "$55.00", tag: "NEW" },
-  { image: tee2, name: "OLIVE LEAF CREW NECK", price: "$55.00", tag: "420" },
-  { image: tee3, name: "WHITE GOLD EDITION", price: "$60.00" },
+  { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
+  { image: teeNavy, name: "NAVY BOX LOGO CREW", price: "$55.00", tag: "OG" },
+  { image: teeGold, name: "GOLD BANNER EDITION", price: "$60.00", tag: "420" },
+  { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00" },
+  { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW" },
+  { image: teePink, name: "PINK KIDS EDITION", price: "$35.00" },
 ];
 
 const Collection = () => {
@@ -30,7 +36,7 @@ const Collection = () => {
           <div className="w-16 h-px bg-accent mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {products.map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
