@@ -63,6 +63,25 @@ const Collection = () => {
           ))}
         </div>
 
+        {/* Ambient video divider */}
+        <div className="relative overflow-hidden h-64 md:h-80 my-16 -mx-6">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/brand-video-3.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-background/50" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="font-display text-4xl md:text-6xl tracking-wider text-foreground/90 drop-shadow-lg">
+              FOR THE CULTURE
+            </p>
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

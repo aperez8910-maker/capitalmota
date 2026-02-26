@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Capital Mota streetwear"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/videos/brand-video-1.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-background/60" />
         <div className="absolute inset-0 bg-gradient-smoke" />
       </div>
