@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Flame, Leaf, MapPin, Music, Users, Zap } from "lucide-react";
-import lookbookFamily from "@/assets/lookbook-family.png";
-import lookbookConfetti from "@/assets/lookbook-confetti.png";
 import lookbookGray from "@/assets/lookbook-gray.png";
+import mockupBlackBox from "@/assets/mockup-black-box.jpg";
+import mockupGreenGold from "@/assets/mockup-green-gold.jpg";
 
 const timeline = [
   {
@@ -51,9 +51,9 @@ const pillars = [
 ];
 
 const lifestyleImages = [
-  { src: lookbookFamily, alt: "Capital Mota family", caption: "FAMILY OVER EVERYTHING" },
-  { src: lookbookConfetti, alt: "Capital Mota celebration", caption: "CELEBRATE THE CULTURE" },
+  { src: mockupBlackBox, alt: "Capital Mota black box tee", caption: "THE ESSENTIALS" },
   { src: lookbookGray, alt: "Capital Mota lifestyle", caption: "EVERYDAY HEAVYWEIGHT" },
+  { src: mockupGreenGold, alt: "Capital Mota green gold tee", caption: "FOR THE CULTURE" },
 ];
 
 const Culture = () => {
