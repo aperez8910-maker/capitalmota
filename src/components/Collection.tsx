@@ -12,12 +12,14 @@ import cwBlack from "@/assets/colorway-black.jpg";
 import cwGray from "@/assets/colorway-gray.jpg";
 import cwBurgundy from "@/assets/colorway-burgundy2.jpg";
 import cwTan from "@/assets/colorway-tan.jpg";
-import catLuxury from "@/assets/catalog-luxury-minimal.png";
-import catA47 from "@/assets/catalog-a47-collection.png";
-import catBlackMockup from "@/assets/catalog-black-tee-mockup.png";
-import catWhiteBlack from "@/assets/catalog-white-black-tees.png";
-import catNight from "@/assets/catalog-night-collection.png";
-import catHoodieSeal from "@/assets/catalog-hoodie-seal.png";
+import fwA47Hoodie from "@/assets/fw-a47-hoodie-crewneck.jpeg";
+import fwNavyTee from "@/assets/fw-navy-box-logo-tee.jpeg";
+import fwBlackTeal from "@/assets/fw-black-teal-tee.png";
+import fwRoyalBlue from "@/assets/fw-royal-blue-collection.png";
+import fwBlueBox from "@/assets/fw-blue-box-logo-tee.png";
+import fwBlueLifestyle from "@/assets/fw-blue-lifestyle.png";
+import fwGrayMinimal from "@/assets/fw-gray-minimal-set.png";
+import fwLuxuryCrewneck from "@/assets/fw-luxury-crewneck.jpeg";
 import cwWhiteBack from "@/assets/colorway-white-back.jpg";
 import cwGreenBack from "@/assets/colorway-green-back.jpg";
 import cwBlackBack from "@/assets/colorway-black-back.jpg";
@@ -159,12 +161,14 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: catBlackMockup, name: "UNITED MOTA MOB TEE — BLACK", price: "$55.00", tag: "OG" },
-            { image: catWhiteBlack, name: "WHITE SEAL TEE + LUCIANO BACK", price: "$55.00", tag: "DUAL" },
-            { image: catLuxury, name: "LUXURY STREET MINIMAL SET", price: "$75.00", tag: "F/W" },
-            { image: catA47, name: "A47 HOODIE COLLECTION", price: "$85.00", tag: "HOODIE" },
-            { image: catNight, name: "NIGHT SESSION COLLECTION", price: "$85.00", tag: "LIMITED" },
-            { image: catHoodieSeal, name: "SEAL HOODIE + CREWNECK", price: "$85.00", tag: "F/W" },
+            { image: fwA47Hoodie, name: "A47 HOODIE + CREWNECK", price: "$85.00", tag: "HOODIE" },
+            { image: fwNavyTee, name: "NAVY BOX LOGO TEE", price: "$55.00", tag: "OG" },
+            { image: fwBlackTeal, name: "BLACK TEAL BOX LOGO TEE", price: "$55.00", tag: "NEW" },
+            { image: fwRoyalBlue, name: "ROYAL BLUE COLLECTION", price: "$55.00", tag: "S/S" },
+            { image: fwBlueBox, name: "BLUE BOX LOGO TEE", price: "$55.00", tag: "CLASSIC" },
+            { image: fwBlueLifestyle, name: "BLUE LIFESTYLE SET", price: "$55.00", tag: "UNISEX" },
+            { image: fwGrayMinimal, name: "GRAY MINIMAL SET", price: "$75.00", tag: "F/W" },
+            { image: fwLuxuryCrewneck, name: "LUXURY STREET CREWNECK", price: "$75.00", tag: "F/W" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
