@@ -63,6 +63,25 @@ const Collection = () => {
           ))}
         </div>
 
+        {/* Promo video banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="my-20 relative overflow-hidden aspect-[21/9]"
+        >
+          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+            <source src="/videos/promo-clip.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-background/30" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="font-display text-4xl md:text-6xl tracking-wider text-foreground drop-shadow-lg">
+              WEAR THE CULTURE
+            </p>
+          </div>
+        </motion.div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

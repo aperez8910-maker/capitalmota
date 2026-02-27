@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const videos = [
-  { src: "/videos/brand-video-2.mp4", title: "THE VISION" },
-  { src: "/videos/brand-video-3.mp4", title: "THE CULTURE" },
+  { src: "/videos/lookbook-1.mp4", title: "THE VISION" },
+  { src: "/videos/promo-clip.mp4", title: "THE CULTURE" },
 ];
 
 const VideoLookbook = () => {
