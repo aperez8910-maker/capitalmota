@@ -4,6 +4,7 @@ import Collection from "@/components/Collection";
 import About from "@/components/About";
 import CultureBanner from "@/components/CultureBanner";
 import ShippingInfo from "@/components/ShippingInfo";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <Collection />
       <About />
       <ShippingInfo />
+      <FAQ />
       <CultureBanner />
       <Footer />
     </div>
