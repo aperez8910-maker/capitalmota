@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Collection from "@/components/Collection";
 import About from "@/components/About";
 import CultureBanner from "@/components/CultureBanner";
+import ShippingInfo from "@/components/ShippingInfo";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <CultureBanner />
       <Collection />
       <About />
+      <ShippingInfo />
       <CultureBanner />
       <Footer />
     </div>
