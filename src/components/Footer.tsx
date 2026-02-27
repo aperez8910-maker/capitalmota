@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
@@ -15,10 +16,13 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-xl tracking-wider text-foreground mb-4">NAVIGATE</h4>
             <div className="space-y-3">
-              {["Collection", "About", "Culture", "Contact"].map((link) => (
+              <Link to="/shop" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">
+                Shop
+              </Link>
+              {["About", "Culture", "Contact"].map((link) => (
                 <a
                   key={link}
-                  href={`#${link.toLowerCase()}`}
+                  href={`/#${link.toLowerCase()}`}
                   className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link}
