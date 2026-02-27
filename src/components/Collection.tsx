@@ -12,6 +12,12 @@ import cwBlack from "@/assets/colorway-black.jpg";
 import cwGray from "@/assets/colorway-gray.jpg";
 import cwBurgundy from "@/assets/colorway-burgundy2.jpg";
 import cwTan from "@/assets/colorway-tan.jpg";
+import catLuxury from "@/assets/catalog-luxury-minimal.png";
+import catA47 from "@/assets/catalog-a47-collection.png";
+import catBlackMockup from "@/assets/catalog-black-tee-mockup.png";
+import catWhiteBlack from "@/assets/catalog-white-black-tees.png";
+import catNight from "@/assets/catalog-night-collection.png";
+import catHoodieSeal from "@/assets/catalog-hoodie-seal.png";
 import cwWhiteBack from "@/assets/colorway-white-back.jpg";
 import cwGreenBack from "@/assets/colorway-green-back.jpg";
 import cwBlackBack from "@/assets/colorway-black-back.jpg";
@@ -129,6 +135,36 @@ const Collection = () => {
             { image: cwGrayBack, name: "HEATHER GRAY — BACK", price: "$55.00", tag: "BACK" },
             { image: cwBurgundyBack, name: "BURGUNDY — BACK", price: "$55.00", tag: "BACK" },
             { image: cwTanBack, name: "SAND / TAN — BACK", price: "$55.00", tag: "BACK" },
+          ].map((product, i) => (
+            <ProductCard key={product.name} {...product} index={i} />
+          ))}
+        </div>
+
+        {/* F/W Collection */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 mt-32"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-3">
+            Fall / Winter
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
+            F/W COLLECTION
+          </h2>
+          <div className="w-16 h-px bg-primary mx-auto mt-6" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+          {[
+            { image: catBlackMockup, name: "UNITED MOTA MOB TEE — BLACK", price: "$55.00", tag: "OG" },
+            { image: catWhiteBlack, name: "WHITE SEAL TEE + LUCIANO BACK", price: "$55.00", tag: "DUAL" },
+            { image: catLuxury, name: "LUXURY STREET MINIMAL SET", price: "$75.00", tag: "F/W" },
+            { image: catA47, name: "A47 HOODIE COLLECTION", price: "$85.00", tag: "HOODIE" },
+            { image: catNight, name: "NIGHT SESSION COLLECTION", price: "$85.00", tag: "LIMITED" },
+            { image: catHoodieSeal, name: "SEAL HOODIE + CREWNECK", price: "$85.00", tag: "F/W" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
