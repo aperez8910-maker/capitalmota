@@ -4,8 +4,36 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [hasInteracted, setHasInteracted] = useState(false);
+
+  useEffect(() => {
+    const playOnInteraction = () => {
+      if (audioRef.current) {
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+      }
+      document.removeEventListener("click", playOnInteraction);
+      document.removeEventListener("scroll", playOnInteraction);
+      document.removeEventListener("keydown", playOnInteraction);
+    };
+
+    // Try autoplay immediately
+    if (audioRef.current) {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {
+        // Blocked by browser — wait for first user interaction
+        setIsPlaying(false);
+        document.addEventListener("click", playOnInteraction, { once: true });
+        document.addEventListener("scroll", playOnInteraction, { once: true });
+        document.addEventListener("keydown", playOnInteraction, { once: true });
+      });
+    }
+
+    return () => {
+      document.removeEventListener("click", playOnInteraction);
+      document.removeEventListener("scroll", playOnInteraction);
+      document.removeEventListener("keydown", playOnInteraction);
+    };
+  }, []);
 
   const toggle = () => {
     if (!audioRef.current) return;
