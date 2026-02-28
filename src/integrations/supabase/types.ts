@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      order_items: {
+        Row: {
+          created_at: string
+          id: string
+          order_id: string
+          price: number
+          product_id: string
+          quantity: number
+          size: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_id: string
+          price: number
+          product_id: string
+          quantity?: number
+          size: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_id?: string
+          price?: number
+          product_id?: string
+          quantity?: number
+          size?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          shipping_address: Json | null
+          status: string
+          stripe_payment_intent: string | null
+          stripe_session_id: string | null
+          total: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          shipping_address?: Json | null
+          status?: string
+          stripe_payment_intent?: string | null
+          stripe_session_id?: string | null
+          total?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          shipping_address?: Json | null
+          status?: string
+          stripe_payment_intent?: string | null
+          stripe_session_id?: string | null
+          total?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          active: boolean
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          name: string
+          price: number
+          sizes: string[] | null
+          stripe_price_id: string | null
+          tag: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          name: string
+          price: number
+          sizes?: string[] | null
+          stripe_price_id?: string | null
+          tag?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          price?: number
+          sizes?: string[] | null
+          stripe_price_id?: string | null
+          tag?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
