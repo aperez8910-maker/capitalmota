@@ -33,44 +33,48 @@ import fwLuxuryCrewneck from "@/assets/fw-luxury-crewneck.jpeg";
 
 const categories = [
   { id: "all", label: "ALL" },
-  { id: "the-drop", label: "THE DROP" },
+  { id: "tees", label: "TEES" },
   { id: "colorways", label: "COLORWAYS" },
-  { id: "back-details", label: "BACK DETAILS" },
-  { id: "fw-collection", label: "F/W COLLECTION" },
+  { id: "hoodies", label: "HOODIES & CREWS" },
+  { id: "sets", label: "SETS" },
 ] as const;
 
 type CategoryId = (typeof categories)[number]["id"];
 
 const products = [
-  { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC", category: "the-drop" },
-  { image: teeNavy, name: "NAVY BOX LOGO CREW", price: "$55.00", tag: "OG", category: "the-drop" },
-  { image: teeGold, name: "GOLD BANNER EDITION", price: "$60.00", tag: "420", category: "the-drop" },
-  { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00", category: "the-drop" },
-  { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW", category: "the-drop" },
-  { image: teePink, name: "PINK KIDS EDITION", price: "$35.00", category: "the-drop" },
+  // Tees
+  { image: teeWhite, name: "Box Logo Tee — White", price: "$55.00", tag: "CLASSIC", category: "tees" },
+  { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG", category: "tees" },
+  { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420", category: "tees" },
+  { image: teeArch, name: "Arch Tee — Austin", price: "$55.00", category: "tees" },
+  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW", category: "tees" },
+  { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", category: "tees" },
+  { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG", category: "tees" },
+  { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", tag: "NEW", category: "tees" },
+  { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC", category: "tees" },
 
-  { image: cwWhite, name: "WHITE BOX LOGO", price: "$55.00", tag: "COLORWAY", category: "colorways" },
-  { image: cwGreen, name: "FOREST GREEN", price: "$55.00", tag: "COLORWAY", category: "colorways" },
-  { image: cwBlack, name: "BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY", category: "colorways" },
-  { image: cwGray, name: "HEATHER GRAY", price: "$55.00", tag: "COLORWAY", category: "colorways" },
-  { image: cwBurgundy, name: "BURGUNDY", price: "$55.00", tag: "COLORWAY", category: "colorways" },
-  { image: cwTan, name: "SAND / TAN", price: "$55.00", tag: "COLORWAY", category: "colorways" },
+  // Colorways (front + back grouped)
+  { image: cwWhite, name: "Colorway Tee — White (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwWhiteBack, name: "Colorway Tee — White (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  { image: cwGreen, name: "Colorway Tee — Forest Green (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwGreenBack, name: "Colorway Tee — Forest Green (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  { image: cwBlack, name: "Colorway Tee — Black (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwBlackBack, name: "Colorway Tee — Black (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  { image: cwGray, name: "Colorway Tee — Heather Gray (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwGrayBack, name: "Colorway Tee — Heather Gray (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  { image: cwBurgundy, name: "Colorway Tee — Burgundy (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwBurgundyBack, name: "Colorway Tee — Burgundy (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  { image: cwTan, name: "Colorway Tee — Sand (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
+  { image: cwTanBack, name: "Colorway Tee — Sand (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
 
-  { image: cwWhiteBack, name: "WHITE — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
-  { image: cwGreenBack, name: "FOREST GREEN — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
-  { image: cwBlackBack, name: "BLACK — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
-  { image: cwGrayBack, name: "HEATHER GRAY — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
-  { image: cwBurgundyBack, name: "BURGUNDY — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
-  { image: cwTanBack, name: "SAND / TAN — BACK", price: "$55.00", tag: "BACK", category: "back-details" },
+  // Hoodies & Crews
+  { image: fwA47Hoodie, name: "A47 Hoodie — Black", price: "$85.00", tag: "HOODIE", category: "hoodies" },
+  { image: fwLuxuryCrewneck, name: "Luxury Crewneck — Gray", price: "$75.00", tag: "CREW", category: "hoodies" },
 
-  { image: fwA47Hoodie, name: "A47 HOODIE + CREWNECK", price: "$85.00", tag: "HOODIE", category: "fw-collection" },
-  { image: fwNavyTee, name: "NAVY BOX LOGO TEE", price: "$55.00", tag: "OG", category: "fw-collection" },
-  { image: fwBlackTeal, name: "BLACK TEAL BOX LOGO TEE", price: "$55.00", tag: "NEW", category: "fw-collection" },
-  { image: fwRoyalBlue, name: "ROYAL BLUE COLLECTION", price: "$55.00", tag: "S/S", category: "fw-collection" },
-  { image: fwBlueBox, name: "BLUE BOX LOGO TEE", price: "$55.00", tag: "CLASSIC", category: "fw-collection" },
-  { image: fwBlueLifestyle, name: "BLUE LIFESTYLE SET", price: "$55.00", tag: "UNISEX", category: "fw-collection" },
-  { image: fwGrayMinimal, name: "GRAY MINIMAL SET", price: "$75.00", tag: "F/W", category: "fw-collection" },
-  { image: fwLuxuryCrewneck, name: "LUXURY STREET CREWNECK", price: "$75.00", tag: "F/W", category: "fw-collection" },
+  // Sets
+  { image: fwRoyalBlue, name: "Royal Blue Set", price: "$55.00", tag: "S/S", category: "sets" },
+  { image: fwBlueLifestyle, name: "Blue Lifestyle Set", price: "$55.00", tag: "UNISEX", category: "sets" },
+  { image: fwGrayMinimal, name: "Gray Minimal Set", price: "$75.00", tag: "F/W", category: "sets" },
 ];
 
 const Shop = () => {
