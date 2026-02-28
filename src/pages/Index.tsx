@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import MusicPlayer from "@/components/MusicPlayer";
 import CultureBanner from "@/components/CultureBanner";
 import Culture from "@/components/Culture";
 import About from "@/components/About";
@@ -52,6 +53,7 @@ const Index = () => {
       <FAQ />
       <CultureBanner />
       <Footer />
+      <MusicPlayer />
     </div>
   );
 };
