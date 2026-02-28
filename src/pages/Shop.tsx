@@ -34,6 +34,7 @@ import fwLuxuryCrewneck from "@/assets/fw-luxury-crewneck.jpeg";
 const categories = [
   { id: "all", label: "ALL" },
   { id: "tees", label: "TEES" },
+  { id: "kids", label: "KIDS" },
   { id: "colorways", label: "COLORWAYS" },
   { id: "hoodies", label: "HOODIES & CREWS" },
   { id: "sets", label: "SETS" },
@@ -48,7 +49,9 @@ const products = [
   { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420", category: "tees" },
   { image: teeArch, name: "Arch Tee — Austin", price: "$55.00", category: "tees" },
   { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW", category: "tees" },
-  { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", category: "tees" },
+
+  // Kids
+  { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", tag: "YOUTH", category: "kids" },
   { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG", category: "tees" },
   { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", tag: "NEW", category: "tees" },
   { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC", category: "tees" },
