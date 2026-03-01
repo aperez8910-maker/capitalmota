@@ -33,7 +33,9 @@ const Index = () => {
             <div className="flex items-center justify-center gap-5 mb-8">
               <img src={originalLogo} alt="Capital Mota" className="h-14 md:h-20 object-contain" />
               <img src={brandLogo} alt="Capital Mota Austin" className="h-14 md:h-20 object-contain" />
-              <img src={seal} alt="United Mota Mob" className="h-14 md:h-20 w-14 md:w-20 object-cover rounded-full" />
+              <div className="h-14 md:h-20 w-14 md:w-20 rounded-full overflow-hidden border border-foreground/20 flex-shrink-0">
+                <img src={seal} alt="United Mota Mob" className="h-full w-full object-cover scale-110" />
+              </div>
             </div>
             <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-3">
               Heavyweight Collection
