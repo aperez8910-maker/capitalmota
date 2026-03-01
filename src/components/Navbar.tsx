@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "@/hooks/use-cart";
 import logo from "@/assets/logo.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { itemCount, setIsOpen: setCartOpen } = useCart();
 
   const scrollLinks = [
     { label: "About", href: isHome ? "#about" : "/#about" },
@@ -39,20 +41,38 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <Link
-            to="/shop"
-            className="font-display text-lg tracking-wider px-6 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          <button
+            onClick={() => setCartOpen(true)}
+            className="relative text-foreground hover:text-primary transition-colors"
           >
-            SHOP NOW
-          </Link>
+            <ShoppingBag size={22} />
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-accent text-accent-foreground font-display text-xs flex items-center justify-center">
+                {itemCount}
+              </span>
+            )}
+          </button>
         </div>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            onClick={() => setCartOpen(true)}
+            className="relative text-foreground"
+          >
+            <ShoppingBag size={22} />
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-2 w-5 h-5 bg-accent text-accent-foreground font-display text-xs flex items-center justify-center">
+                {itemCount}
+              </span>
+            )}
+          </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

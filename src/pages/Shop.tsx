@@ -42,42 +42,44 @@ const categories = [
 
 type CategoryId = (typeof categories)[number]["id"];
 
+const COLORWAY_PRICE_ID = "price_1T5wpeJgBXUAVj38znl6YNHq";
+
 const products = [
   // Tees
-  { image: teeWhite, name: "Box Logo Tee — White", price: "$55.00", tag: "CLASSIC", category: "tees" },
-  { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG", category: "tees" },
-  { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420", category: "tees" },
-  { image: teeArch, name: "Arch Tee — Austin", price: "$55.00", category: "tees" },
-  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW", category: "tees" },
+  { image: teeWhite, name: "Box Logo Tee — White", price: "$55.00", tag: "CLASSIC", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
+  { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG", category: "tees", stripePriceId: "price_1T5wnVJgBXUAVj38Zyr6qyjq" },
+  { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420", category: "tees", stripePriceId: "price_1T5woSJgBXUAVj380pZv5qxm" },
+  { image: teeArch, name: "Arch Tee — Austin", price: "$55.00", category: "tees", stripePriceId: "price_1T5wonJgBXUAVj38ic8qRjN0" },
+  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T5wp9JgBXUAVj38PCUwnC8v" },
 
   // Kids
-  { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", tag: "YOUTH", category: "kids" },
-  { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG", category: "tees" },
-  { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", tag: "NEW", category: "tees" },
-  { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC", category: "tees" },
+  { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", tag: "YOUTH", category: "kids", stripePriceId: "price_1T5wpOJgBXUAVj381rkrUkty", sizes: ["YS", "YM", "YL"] },
+  { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG", category: "tees", stripePriceId: "price_1T5wnVJgBXUAVj38Zyr6qyjq" },
+  { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
+  { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
 
-  // Colorways (front + back grouped)
-  { image: cwWhite, name: "Colorway Tee — White (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwWhiteBack, name: "Colorway Tee — White (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
-  { image: cwGreen, name: "Colorway Tee — Forest Green (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwGreenBack, name: "Colorway Tee — Forest Green (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
-  { image: cwBlack, name: "Colorway Tee — Black (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwBlackBack, name: "Colorway Tee — Black (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
-  { image: cwGray, name: "Colorway Tee — Heather Gray (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwGrayBack, name: "Colorway Tee — Heather Gray (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
-  { image: cwBurgundy, name: "Colorway Tee — Burgundy (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwBurgundyBack, name: "Colorway Tee — Burgundy (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
-  { image: cwTan, name: "Colorway Tee — Sand (Front)", price: "$55.00", tag: "FRONT", category: "colorways" },
-  { image: cwTanBack, name: "Colorway Tee — Sand (Back)", price: "$55.00", tag: "BACK", category: "colorways" },
+  // Colorways
+  { image: cwWhite, name: "Colorway Tee — White (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwWhiteBack, name: "Colorway Tee — White (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwGreen, name: "Colorway Tee — Forest Green (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwGreenBack, name: "Colorway Tee — Forest Green (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwBlack, name: "Colorway Tee — Black (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwBlackBack, name: "Colorway Tee — Black (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwGray, name: "Colorway Tee — Heather Gray (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwGrayBack, name: "Colorway Tee — Heather Gray (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwBurgundy, name: "Colorway Tee — Burgundy (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwBurgundyBack, name: "Colorway Tee — Burgundy (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwTan, name: "Colorway Tee — Sand (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
+  { image: cwTanBack, name: "Colorway Tee — Sand (Back)", price: "$55.00", tag: "BACK", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
 
   // Hoodies & Crews
-  { image: fwA47Hoodie, name: "A47 Hoodie — Black", price: "$85.00", tag: "HOODIE", category: "hoodies" },
-  { image: fwLuxuryCrewneck, name: "Luxury Crewneck — Gray", price: "$75.00", tag: "CREW", category: "hoodies" },
+  { image: fwA47Hoodie, name: "A47 Hoodie — Black", price: "$85.00", tag: "HOODIE", category: "hoodies", stripePriceId: "price_1T5wprJgBXUAVj38AxKpn3n4", sizes: ["S", "M", "L", "XL", "2XL", "3XL"] },
+  { image: fwLuxuryCrewneck, name: "Luxury Crewneck — Gray", price: "$75.00", tag: "CREW", category: "hoodies", stripePriceId: "price_1T5wqNJgBXUAVj38zF0nvADB", sizes: ["S", "M", "L", "XL", "2XL", "3XL"] },
 
   // Sets
-  { image: fwRoyalBlue, name: "Royal Blue Set", price: "$55.00", tag: "S/S", category: "sets" },
-  { image: fwBlueLifestyle, name: "Blue Lifestyle Set", price: "$55.00", tag: "UNISEX", category: "sets" },
-  { image: fwGrayMinimal, name: "Gray Minimal Set", price: "$75.00", tag: "F/W", category: "sets" },
+  { image: fwRoyalBlue, name: "Royal Blue Set", price: "$55.00", tag: "S/S", category: "sets", stripePriceId: "price_1T5ztcJgBXUAVj38WaMeRhmZ" },
+  { image: fwBlueLifestyle, name: "Blue Lifestyle Set", price: "$55.00", tag: "UNISEX", category: "sets", stripePriceId: "price_1T5zuSJgBXUAVj38pTzxN27F" },
+  { image: fwGrayMinimal, name: "Gray Minimal Set", price: "$75.00", tag: "F/W", category: "sets", stripePriceId: "price_1T5zuZJgBXUAVj3877Fueo46" },
 ];
 
 const Shop = () => {
@@ -162,6 +164,8 @@ const Shop = () => {
                   price={product.price}
                   tag={product.tag}
                   index={i}
+                  stripePriceId={product.stripePriceId}
+                  sizes={(product as any).sizes}
                 />
               ))}
             </motion.div>
