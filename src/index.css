@@ -6,53 +6,53 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 40 20% 88%;
+    --background: 220 30% 12%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 9%;
-    --card-foreground: 40 20% 88%;
+    --card: 220 28% 16%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 40 20% 88%;
+    --popover: 220 28% 16%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 40 30% 70%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 220 30% 12%;
 
-    --secondary: 40 15% 25%;
-    --secondary-foreground: 40 20% 88%;
+    --secondary: 220 15% 22%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 0 0% 13%;
-    --muted-foreground: 40 10% 50%;
+    --muted: 220 18% 20%;
+    --muted-foreground: 220 10% 58%;
 
-    --accent: 38 40% 58%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 0 0% 72%;
+    --accent-foreground: 220 30% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 96%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 40 30% 70%;
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 0 0% 96%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 7%;
-    --sidebar-foreground: 40 20% 88%;
-    --sidebar-primary: 40 30% 70%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 40 20% 88%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 40 30% 70%;
+    --sidebar-background: 220 30% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 96%;
+    --sidebar-primary-foreground: 220 30% 12%;
+    --sidebar-accent: 220 18% 20%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 220 18% 22%;
+    --sidebar-ring: 0 0% 96%;
 
     --font-display: 'Bebas Neue', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --gradient-smoke: linear-gradient(180deg, hsl(0 0% 5% / 0) 0%, hsl(0 0% 5%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(40 40% 58%), hsl(40 25% 40%));
-    --gradient-olive: linear-gradient(135deg, hsl(40 30% 70%), hsl(40 20% 50%));
-    --shadow-glow: 0 0 40px hsl(40 30% 70% / 0.12);
-    --shadow-gold: 0 0 30px hsl(40 40% 58% / 0.18);
+    --gradient-smoke: linear-gradient(180deg, hsl(220 30% 12% / 0) 0%, hsl(220 30% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(0 0% 96%), hsl(0 0% 72%));
+    --gradient-olive: linear-gradient(135deg, hsl(0 0% 96%), hsl(220 10% 58%));
+    --shadow-glow: 0 0 40px hsl(0 0% 96% / 0.08);
+    --shadow-gold: 0 0 30px hsl(0 0% 72% / 0.12);
   }
 }
 
