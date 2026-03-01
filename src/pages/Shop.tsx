@@ -30,6 +30,10 @@ import fwBlueBox from "@/assets/fw-blue-box-logo-tee.png";
 import fwBlueLifestyle from "@/assets/fw-blue-lifestyle.png";
 import fwGrayMinimal from "@/assets/fw-gray-minimal-set.png";
 import fwLuxuryCrewneck from "@/assets/fw-luxury-crewneck.jpeg";
+import teeAk47TanMockup from "@/assets/tee-ak47-tan-mockup.png";
+import teeCapitalHazeTrio from "@/assets/tee-capital-haze-trio.png";
+import teeUnitedMobBlack from "@/assets/tee-united-mota-mob-black.png";
+import teeUnitedMobColorways from "@/assets/tee-united-mota-mob-colorways.png";
 
 const categories = [
   { id: "all", label: "ALL" },
@@ -80,6 +84,14 @@ const products = [
   { image: fwRoyalBlue, name: "Royal Blue Set", price: "$55.00", tag: "S/S", category: "sets", stripePriceId: "price_1T5ztcJgBXUAVj38WaMeRhmZ" },
   { image: fwBlueLifestyle, name: "Blue Lifestyle Set", price: "$55.00", tag: "UNISEX", category: "sets", stripePriceId: "price_1T5zuSJgBXUAVj38pTzxN27F" },
   { image: fwGrayMinimal, name: "Gray Minimal Set", price: "$75.00", tag: "F/W", category: "sets", stripePriceId: "price_1T5zuZJgBXUAVj3877Fueo46" },
+
+  // New Tees
+  { image: teeAk47TanMockup, name: "AK47 Tee — Black", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628KJgBXUAVj38EK7xKvsq" },
+  { image: teeAk47TanMockup, name: "Capital Tee — Tan", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628XJgBXUAVj38fmBWtxxc" },
+  { image: teeCapitalHazeTrio, name: "Capital Haze Tee — Red", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628XJgBXUAVj38OMLcoRW5" },
+  { image: teeUnitedMobBlack, name: "United Mota Mob Tee — Black", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628YJgBXUAVj38I7f2SUKz" },
+  { image: teeUnitedMobColorways, name: "United Mota Mob Tee — Olive", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628ZJgBXUAVj385H8Kmuxg" },
+  { image: teeUnitedMobColorways, name: "United Mota Mob Tee — Sand", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628aJgBXUAVj38BIKBLjrz" },
 ];
 
 const Shop = () => {
