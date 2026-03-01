@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "@/hooks/use-cart";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/brand-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
