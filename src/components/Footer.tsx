@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img src={originalLogo} alt="Capital Mota" className="h-10 object-contain" />
-              <img src={logo} alt="Capital Mota Austin" className="h-10 object-contain" />
-              <img src={seal} alt="United Mota Mob" className="h-10 object-contain rounded-full" />
+            <div className="flex items-center gap-4 mb-6">
+              <img src={originalLogo} alt="Capital Mota" className="h-14 object-contain" />
+              <img src={logo} alt="Capital Mota Austin" className="h-14 object-contain" />
+              <img src={seal} alt="United Mota Mob" className="h-14 object-contain rounded-full" />
             </div>
             <p className="font-body text-sm text-muted-foreground font-light leading-relaxed">
               Heavyweight streetwear rooted in Austin, Texas. Built for the 420 culture.

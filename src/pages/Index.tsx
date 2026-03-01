@@ -10,6 +10,9 @@ import VideoLookbook from "@/components/VideoLookbook";
 import ShippingInfo from "@/components/ShippingInfo";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import originalLogo from "@/assets/logo.jpeg";
+import brandLogo from "@/assets/brand-logo.png";
+import seal from "@/assets/brand-seal.jpeg";
 
 const Index = () => {
   return (
@@ -27,6 +30,11 @@ const Index = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <div className="flex items-center justify-center gap-5 mb-8">
+              <img src={originalLogo} alt="Capital Mota" className="h-14 md:h-20 object-contain" />
+              <img src={brandLogo} alt="Capital Mota Austin" className="h-14 md:h-20 object-contain" />
+              <img src={seal} alt="United Mota Mob" className="h-14 md:h-20 object-contain rounded-full" />
+            </div>
             <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-3">
               Heavyweight Collection
             </p>

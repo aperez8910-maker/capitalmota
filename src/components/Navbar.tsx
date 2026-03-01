@@ -21,11 +21,11 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={originalLogo} alt="Capital Mota" className="h-10 object-contain" />
-          <img src={logo} alt="Capital Mota Austin" className="h-10 object-contain" />
-          <img src={seal} alt="United Mota Mob" className="h-10 object-contain rounded-full" />
+      <div className="container mx-auto px-6 py-2 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={originalLogo} alt="Capital Mota" className="h-12 md:h-14 object-contain" />
+          <img src={logo} alt="Capital Mota Austin" className="h-12 md:h-14 object-contain" />
+          <img src={seal} alt="United Mota Mob" className="h-12 md:h-14 object-contain rounded-full" />
         </Link>
 
         {/* Desktop */}

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
+import originalLogo from "@/assets/logo.jpeg";
+import brandLogo from "@/assets/brand-logo.png";
+import seal from "@/assets/brand-seal.jpeg";
 
 const Hero = () => {
   return (
@@ -23,6 +26,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
+        {/* Brand logos */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-center gap-4 md:gap-6 mb-8"
+        >
+          <img src={originalLogo} alt="Capital Mota" className="h-16 md:h-24 object-contain" />
+          <img src={brandLogo} alt="Capital Mota Austin" className="h-16 md:h-24 object-contain" />
+          <img src={seal} alt="United Mota Mob" className="h-16 md:h-24 object-contain rounded-full" />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
