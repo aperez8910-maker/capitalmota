@@ -99,45 +99,7 @@ const Culture = () => {
           ))}
         </div>
 
-        {/* History Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-3">
-            Our Journey
-          </p>
-          <h3 className="font-display text-4xl md:text-5xl tracking-wider text-foreground">
-            HISTORY
-          </h3>
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto mb-32">
-          <div className="relative border-l-2 border-primary/30 ml-4 md:ml-0 md:mx-auto">
-            {timeline.map((event, i) => (
-              <motion.div
-                key={event.year}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="relative pl-10 pb-12 last:pb-0"
-              >
-                <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background" />
-                <span className="font-display text-sm tracking-wider text-primary">{event.year}</span>
-                <h4 className="font-display text-2xl tracking-wider text-foreground mt-1 mb-2">
-                  {event.title}
-                </h4>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  {event.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* Brand Manifesto is now a separate component rendered in Index */}
 
         {/* Lifestyle Gallery */}
         <motion.div

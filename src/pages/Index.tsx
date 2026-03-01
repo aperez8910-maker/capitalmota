@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import MusicPlayer from "@/components/MusicPlayer";
 import CultureBanner from "@/components/CultureBanner";
 import Culture from "@/components/Culture";
+import BrandManifesto from "@/components/BrandManifesto";
 import About from "@/components/About";
 import VideoLookbook from "@/components/VideoLookbook";
 import ShippingInfo from "@/components/ShippingInfo";
@@ -57,6 +58,7 @@ const Index = () => {
       </section>
 
       <VideoLookbook />
+      <BrandManifesto />
       <Culture />
       <About />
       <ShippingInfo />
