@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={originalLogo} alt="Capital Mota" className="h-12 md:h-14 object-contain" />
           <img src={logo} alt="Capital Mota Austin" className="h-12 md:h-14 object-contain" />
-          <img src={seal} alt="United Mota Mob" className="h-12 md:h-14 object-contain rounded-full" />
+          <img src={seal} alt="United Mota Mob" className="h-12 md:h-14 w-12 md:w-14 object-cover rounded-full" />
         </Link>
 
         {/* Desktop */}
