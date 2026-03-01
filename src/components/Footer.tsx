@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/brand-logo.png";
+import seal from "@/assets/brand-seal.jpeg";
 
 const Footer = () => {
   return (
@@ -7,7 +8,10 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <img src={logo} alt="Capital Mota" className="h-10 object-contain mb-6" />
+            <div className="flex items-center gap-3 mb-6">
+              <img src={logo} alt="Capital Mota" className="h-10 object-contain" />
+              <img src={seal} alt="United Mota Mob" className="h-10 object-contain rounded-full" />
+            </div>
             <p className="font-body text-sm text-muted-foreground font-light leading-relaxed">
               Heavyweight streetwear rooted in Austin, Texas. Built for the 420 culture.
             </p>
