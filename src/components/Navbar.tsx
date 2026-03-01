@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "@/hooks/use-cart";
+import originalLogo from "@/assets/logo.jpeg";
 import logo from "@/assets/brand-logo.png";
 import seal from "@/assets/brand-seal.jpeg";
 
@@ -22,7 +23,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Capital Mota" className="h-10 object-contain" />
+          <img src={originalLogo} alt="Capital Mota" className="h-10 object-contain" />
+          <img src={logo} alt="Capital Mota Austin" className="h-10 object-contain" />
           <img src={seal} alt="United Mota Mob" className="h-10 object-contain rounded-full" />
         </Link>
 
