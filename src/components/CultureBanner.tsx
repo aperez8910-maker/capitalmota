@@ -16,7 +16,7 @@ const CultureBanner = () => {
             <img src={originalLogo} alt="" className="h-12 md:h-16 object-contain inline-block opacity-40" />
             CAPITAL MOTA <span className="text-primary/30">✦</span>
             <div className="h-12 md:h-16 w-12 md:w-16 rounded-full overflow-hidden inline-flex flex-shrink-0 opacity-40">
-              <img src={seal} alt="" className="h-full w-full object-cover scale-110" />
+              <img src={seal} alt="" className="h-full w-full object-contain" />
             </div>
             420 CULTURE <span className="text-accent/30">✦</span> AUSTIN TX <span className="text-primary/30">✦</span>
           </span>

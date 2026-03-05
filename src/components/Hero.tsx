@@ -36,7 +36,7 @@ const Hero = () => {
           <img src={originalLogo} alt="Capital Mota" className="h-16 md:h-24 object-contain" />
           <img src={brandLogo} alt="Capital Mota Austin" className="h-16 md:h-24 object-contain" />
           <div className="h-16 md:h-24 w-16 md:w-24 rounded-full overflow-hidden border border-foreground/20 flex-shrink-0">
-            <img src={seal} alt="United Mota Mob" className="h-full w-full object-cover scale-110" />
+            <img src={seal} alt="United Mota Mob" className="h-full w-full object-contain" />
           </div>
         </motion.div>
 

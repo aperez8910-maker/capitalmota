@@ -26,7 +26,7 @@ const Navbar = () => {
           <img src={originalLogo} alt="Capital Mota" className="h-12 md:h-14 object-contain" />
           <img src={logo} alt="Capital Mota Austin" className="h-12 md:h-14 object-contain" />
           <div className="h-12 md:h-14 w-12 md:w-14 rounded-full overflow-hidden border border-foreground/20 flex-shrink-0">
-            <img src={seal} alt="United Mota Mob" className="h-full w-full object-cover scale-110" />
+            <img src={seal} alt="United Mota Mob" className="h-full w-full object-contain" />
           </div>
         </Link>
 
