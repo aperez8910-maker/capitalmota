@@ -8,6 +8,7 @@ import Culture from "@/components/Culture";
 import BrandManifesto from "@/components/BrandManifesto";
 import About from "@/components/About";
 import VideoLookbook from "@/components/VideoLookbook";
+import LookbookGallery from "@/components/LookbookGallery";
 import ShippingInfo from "@/components/ShippingInfo";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
