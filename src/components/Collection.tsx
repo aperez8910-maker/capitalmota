@@ -200,11 +200,11 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: womensPastel, name: "PASTEL ESSENTIALS SET", price: "$75.00", tag: "WOMEN'S" },
-            { image: windbreakerGPG, name: "WINDBREAKER SET — GREEN / PINK / GOLD", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerBOW, name: "WINDBREAKER SET — BLUE / ORANGE / WHITE", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerPPT, name: "WINDBREAKER SET — PURPLE / PINK / TEAL", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerNight, name: "NIGHT CITY WINDBREAKER SET", price: "$95.00", tag: "WOMEN'S" },
+            { image: womensPastel, name: "Set — Pastel Essentials", price: "$75.00", tag: "WOMEN'S" },
+            { image: windbreakerGPG, name: "Windbreaker Set — Green Pink Gold", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerBOW, name: "Windbreaker Set — Blue Orange White", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerPPT, name: "Windbreaker Set — Purple Pink Teal", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerNight, name: "Windbreaker Set — Night City", price: "$95.00", tag: "WOMEN'S" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
