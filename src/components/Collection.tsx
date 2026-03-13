@@ -180,7 +180,61 @@ const Collection = () => {
             <ProductCard key={product.name} {...product} index={i} />
           ))}
         </div>
-      </div>
+
+        {/* Women's Collection */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 mt-32"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-3">
+            Women's Line
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
+            HER COLLECTION
+          </h2>
+          <div className="w-16 h-px bg-primary mx-auto mt-6" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+          {[
+            { image: womensPastel, name: "PASTEL ESSENTIALS SET", price: "$75.00", tag: "WOMEN'S" },
+            { image: windbreakerGPG, name: "WINDBREAKER SET — GREEN / PINK / GOLD", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerBOW, name: "WINDBREAKER SET — BLUE / ORANGE / WHITE", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerPPT, name: "WINDBREAKER SET — PURPLE / PINK / TEAL", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerNight, name: "NIGHT CITY WINDBREAKER SET", price: "$95.00", tag: "WOMEN'S" },
+          ].map((product, i) => (
+            <ProductCard key={product.name} {...product} index={i} />
+          ))}
+        </div>
+
+        {/* AK47 Hoodie Collection */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 mt-32"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.3em] text-accent mb-3">
+            Heavyweight Hoodies
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
+            AK47 HOODIE SETS
+          </h2>
+          <div className="w-16 h-px bg-primary mx-auto mt-6" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+          {[
+            { image: ak47HoodieTrio, name: "AK47 HOODIE SET — ALL COLORWAYS", price: "$85.00", tag: "HOODIE" },
+            { image: ak47GoldHoodie, name: "AK47 BLACK & GOLD HOODIE", price: "$85.00", tag: "HOODIE" },
+          ].map((product, i) => (
+            <ProductCard key={product.name} {...product} index={i} />
+          ))}
+        </div>
     </section>
   );
 };
