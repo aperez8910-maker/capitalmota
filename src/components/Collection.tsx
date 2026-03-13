@@ -229,8 +229,8 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: ak47HoodieTrio, name: "AK47 HOODIE SET — ALL COLORWAYS", price: "$85.00", tag: "HOODIE" },
-            { image: ak47GoldHoodie, name: "AK47 BLACK & GOLD HOODIE", price: "$85.00", tag: "HOODIE" },
+            { image: ak47HoodieTrio, name: "Hoodie Set — AK47 All Colorways", price: "$85.00", tag: "HOODIE" },
+            { image: ak47GoldHoodie, name: "Hoodie — AK47 Black Gold", price: "$85.00", tag: "HOODIE" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
