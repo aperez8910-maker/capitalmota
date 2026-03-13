@@ -138,12 +138,12 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: cwWhiteBack, name: "WHITE — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwGreenBack, name: "FOREST GREEN — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwBlackBack, name: "BLACK — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwGrayBack, name: "HEATHER GRAY — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwBurgundyBack, name: "BURGUNDY — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwTanBack, name: "SAND / TAN — BACK", price: "$55.00", tag: "BACK" },
+            { image: cwWhiteBack, name: "Colorway Tee — White Back", price: "$55.00", tag: "BACK" },
+            { image: cwGreenBack, name: "Colorway Tee — Forest Green Back", price: "$55.00", tag: "BACK" },
+            { image: cwBlackBack, name: "Colorway Tee — Black Back", price: "$55.00", tag: "BACK" },
+            { image: cwGrayBack, name: "Colorway Tee — Heather Gray Back", price: "$55.00", tag: "BACK" },
+            { image: cwBurgundyBack, name: "Colorway Tee — Burgundy Back", price: "$55.00", tag: "BACK" },
+            { image: cwTanBack, name: "Colorway Tee — Sand Tan Back", price: "$55.00", tag: "BACK" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
