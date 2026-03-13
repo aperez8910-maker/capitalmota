@@ -35,21 +35,21 @@ import cwBurgundyBack from "@/assets/colorway-burgundy-back.jpg";
 import cwTanBack from "@/assets/colorway-tan-back.jpg";
 
 const currentProducts = [
-  { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
-  { image: teeNavy, name: "NAVY BOX LOGO CREW", price: "$55.00", tag: "OG" },
-  { image: teeGold, name: "GOLD BANNER EDITION", price: "$60.00", tag: "420" },
-  { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00" },
-  { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW" },
-  { image: teePink, name: "PINK KIDS EDITION", price: "$35.00" },
+  { image: teeWhite, name: "Box Logo Tee — White Vertical", price: "$55.00", tag: "CLASSIC" },
+  { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG" },
+  { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420" },
+  { image: teeArch, name: "Arch Tee — Austin", price: "$55.00" },
+  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW" },
+  { image: teePink, name: "Capital Tee — Pink Kids", price: "$35.00" },
 ];
 
 const colorways = [
-  { image: cwWhite, name: "WHITE BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGreen, name: "FOREST GREEN", price: "$55.00", tag: "COLORWAY" },
-  { image: cwBlack, name: "BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGray, name: "HEATHER GRAY", price: "$55.00", tag: "COLORWAY" },
-  { image: cwBurgundy, name: "BURGUNDY", price: "$55.00", tag: "COLORWAY" },
-  { image: cwTan, name: "SAND / TAN", price: "$55.00", tag: "COLORWAY" },
+  { image: cwWhite, name: "Colorway Tee — White Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGreen, name: "Colorway Tee — Forest Green Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBlack, name: "Colorway Tee — Black Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGray, name: "Colorway Tee — Heather Gray Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBurgundy, name: "Colorway Tee — Burgundy Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwTan, name: "Colorway Tee — Sand Tan Front", price: "$55.00", tag: "COLORWAY" },
 ];
 
 const Collection = () => {
@@ -138,12 +138,12 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: cwWhiteBack, name: "WHITE — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwGreenBack, name: "FOREST GREEN — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwBlackBack, name: "BLACK — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwGrayBack, name: "HEATHER GRAY — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwBurgundyBack, name: "BURGUNDY — BACK", price: "$55.00", tag: "BACK" },
-            { image: cwTanBack, name: "SAND / TAN — BACK", price: "$55.00", tag: "BACK" },
+            { image: cwWhiteBack, name: "Colorway Tee — White Back", price: "$55.00", tag: "BACK" },
+            { image: cwGreenBack, name: "Colorway Tee — Forest Green Back", price: "$55.00", tag: "BACK" },
+            { image: cwBlackBack, name: "Colorway Tee — Black Back", price: "$55.00", tag: "BACK" },
+            { image: cwGrayBack, name: "Colorway Tee — Heather Gray Back", price: "$55.00", tag: "BACK" },
+            { image: cwBurgundyBack, name: "Colorway Tee — Burgundy Back", price: "$55.00", tag: "BACK" },
+            { image: cwTanBack, name: "Colorway Tee — Sand Tan Back", price: "$55.00", tag: "BACK" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
@@ -168,14 +168,14 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: fwA47Hoodie, name: "A47 HOODIE + CREWNECK", price: "$85.00", tag: "HOODIE" },
-            { image: fwNavyTee, name: "NAVY BOX LOGO TEE", price: "$55.00", tag: "OG" },
-            { image: fwBlackTeal, name: "BLACK TEAL BOX LOGO TEE", price: "$55.00", tag: "NEW" },
-            { image: fwRoyalBlue, name: "ROYAL BLUE COLLECTION", price: "$55.00", tag: "S/S" },
-            { image: fwBlueBox, name: "BLUE BOX LOGO TEE", price: "$55.00", tag: "CLASSIC" },
-            { image: fwBlueLifestyle, name: "BLUE LIFESTYLE SET", price: "$55.00", tag: "UNISEX" },
-            { image: fwGrayMinimal, name: "GRAY MINIMAL SET", price: "$75.00", tag: "F/W" },
-            { image: fwLuxuryCrewneck, name: "LUXURY STREET CREWNECK", price: "$75.00", tag: "F/W" },
+            { image: fwA47Hoodie, name: "Hoodie Set — A47 Black", price: "$85.00", tag: "HOODIE" },
+            { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG" },
+            { image: fwBlackTeal, name: "Box Logo Tee — Black Teal", price: "$55.00", tag: "NEW" },
+            { image: fwRoyalBlue, name: "Set — Royal Blue", price: "$55.00", tag: "S/S" },
+            { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC" },
+            { image: fwBlueLifestyle, name: "Set — Blue Lifestyle", price: "$55.00", tag: "UNISEX" },
+            { image: fwGrayMinimal, name: "Set — Gray Minimal", price: "$75.00", tag: "F/W" },
+            { image: fwLuxuryCrewneck, name: "Crewneck — Luxury Street", price: "$75.00", tag: "F/W" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
@@ -200,11 +200,11 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: womensPastel, name: "PASTEL ESSENTIALS SET", price: "$75.00", tag: "WOMEN'S" },
-            { image: windbreakerGPG, name: "WINDBREAKER SET — GREEN / PINK / GOLD", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerBOW, name: "WINDBREAKER SET — BLUE / ORANGE / WHITE", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerPPT, name: "WINDBREAKER SET — PURPLE / PINK / TEAL", price: "$95.00", tag: "WOMEN'S" },
-            { image: windbreakerNight, name: "NIGHT CITY WINDBREAKER SET", price: "$95.00", tag: "WOMEN'S" },
+            { image: womensPastel, name: "Set — Pastel Essentials", price: "$75.00", tag: "WOMEN'S" },
+            { image: windbreakerGPG, name: "Windbreaker Set — Green Pink Gold", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerBOW, name: "Windbreaker Set — Blue Orange White", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerPPT, name: "Windbreaker Set — Purple Pink Teal", price: "$95.00", tag: "WOMEN'S" },
+            { image: windbreakerNight, name: "Windbreaker Set — Night City", price: "$95.00", tag: "WOMEN'S" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
@@ -229,8 +229,8 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: ak47HoodieTrio, name: "AK47 HOODIE SET — ALL COLORWAYS", price: "$85.00", tag: "HOODIE" },
-            { image: ak47GoldHoodie, name: "AK47 BLACK & GOLD HOODIE", price: "$85.00", tag: "HOODIE" },
+            { image: ak47HoodieTrio, name: "Hoodie Set — AK47 All Colorways", price: "$85.00", tag: "HOODIE" },
+            { image: ak47GoldHoodie, name: "Hoodie — AK47 Black Gold", price: "$85.00", tag: "HOODIE" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
