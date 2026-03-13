@@ -235,6 +235,7 @@ const Collection = () => {
             <ProductCard key={product.name} {...product} index={i} />
           ))}
         </div>
+      </div>
     </section>
   );
 };
