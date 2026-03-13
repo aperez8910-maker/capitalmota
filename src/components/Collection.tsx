@@ -35,21 +35,21 @@ import cwBurgundyBack from "@/assets/colorway-burgundy-back.jpg";
 import cwTanBack from "@/assets/colorway-tan-back.jpg";
 
 const currentProducts = [
-  { image: teeWhite, name: "WHITE VERTICAL BOX LOGO", price: "$55.00", tag: "CLASSIC" },
-  { image: teeNavy, name: "NAVY BOX LOGO CREW", price: "$55.00", tag: "OG" },
-  { image: teeGold, name: "GOLD BANNER EDITION", price: "$60.00", tag: "420" },
-  { image: teeArch, name: "AUSTIN ARCH TEE", price: "$55.00" },
-  { image: teeRed, name: "RED CAPITAL TEE", price: "$55.00", tag: "NEW" },
-  { image: teePink, name: "PINK KIDS EDITION", price: "$35.00" },
+  { image: teeWhite, name: "Box Logo Tee — White Vertical", price: "$55.00", tag: "CLASSIC" },
+  { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG" },
+  { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420" },
+  { image: teeArch, name: "Arch Tee — Austin", price: "$55.00" },
+  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW" },
+  { image: teePink, name: "Capital Tee — Pink Kids", price: "$35.00" },
 ];
 
 const colorways = [
-  { image: cwWhite, name: "WHITE BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGreen, name: "FOREST GREEN", price: "$55.00", tag: "COLORWAY" },
-  { image: cwBlack, name: "BLACK BOX LOGO", price: "$55.00", tag: "COLORWAY" },
-  { image: cwGray, name: "HEATHER GRAY", price: "$55.00", tag: "COLORWAY" },
-  { image: cwBurgundy, name: "BURGUNDY", price: "$55.00", tag: "COLORWAY" },
-  { image: cwTan, name: "SAND / TAN", price: "$55.00", tag: "COLORWAY" },
+  { image: cwWhite, name: "Colorway Tee — White Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGreen, name: "Colorway Tee — Forest Green Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBlack, name: "Colorway Tee — Black Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwGray, name: "Colorway Tee — Heather Gray Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwBurgundy, name: "Colorway Tee — Burgundy Front", price: "$55.00", tag: "COLORWAY" },
+  { image: cwTan, name: "Colorway Tee — Sand Tan Front", price: "$55.00", tag: "COLORWAY" },
 ];
 
 const Collection = () => {
