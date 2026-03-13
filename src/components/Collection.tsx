@@ -168,14 +168,14 @@ const Collection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
           {[
-            { image: fwA47Hoodie, name: "A47 HOODIE + CREWNECK", price: "$85.00", tag: "HOODIE" },
-            { image: fwNavyTee, name: "NAVY BOX LOGO TEE", price: "$55.00", tag: "OG" },
-            { image: fwBlackTeal, name: "BLACK TEAL BOX LOGO TEE", price: "$55.00", tag: "NEW" },
-            { image: fwRoyalBlue, name: "ROYAL BLUE COLLECTION", price: "$55.00", tag: "S/S" },
-            { image: fwBlueBox, name: "BLUE BOX LOGO TEE", price: "$55.00", tag: "CLASSIC" },
-            { image: fwBlueLifestyle, name: "BLUE LIFESTYLE SET", price: "$55.00", tag: "UNISEX" },
-            { image: fwGrayMinimal, name: "GRAY MINIMAL SET", price: "$75.00", tag: "F/W" },
-            { image: fwLuxuryCrewneck, name: "LUXURY STREET CREWNECK", price: "$75.00", tag: "F/W" },
+            { image: fwA47Hoodie, name: "Hoodie Set — A47 Black", price: "$85.00", tag: "HOODIE" },
+            { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG" },
+            { image: fwBlackTeal, name: "Box Logo Tee — Black Teal", price: "$55.00", tag: "NEW" },
+            { image: fwRoyalBlue, name: "Set — Royal Blue", price: "$55.00", tag: "S/S" },
+            { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC" },
+            { image: fwBlueLifestyle, name: "Set — Blue Lifestyle", price: "$55.00", tag: "UNISEX" },
+            { image: fwGrayMinimal, name: "Set — Gray Minimal", price: "$75.00", tag: "F/W" },
+            { image: fwLuxuryCrewneck, name: "Crewneck — Luxury Street", price: "$75.00", tag: "F/W" },
           ].map((product, i) => (
             <ProductCard key={product.name} {...product} index={i} />
           ))}
