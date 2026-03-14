@@ -6,13 +6,13 @@ import catalogTactical from "@/assets/catalog-tactical-luxury.png";
 import catalogPremium from "@/assets/catalog-premium-streetwear.png";
 import catalogRacing from "@/assets/catalog-racing-athletic.png";
 
-const galleryImages = [
-  { src: catalogFullLineup, alt: "Capital Mota — Full Lineup", label: "FULL LINEUP" },
-  { src: catalogLifestyle, alt: "Capital Mota — Lifestyle", label: "LIFESTYLE" },
-  { src: catalogAk47, alt: "Capital Mota — AK47 Collection", label: "AK47 COLLECTION" },
-  { src: catalogTactical, alt: "Capital Mota — Tactical & Luxury", label: "TACTICAL × LUXURY" },
-  { src: catalogPremium, alt: "Capital Mota — Premium Streetwear", label: "PREMIUM STREETWEAR" },
-  { src: catalogRacing, alt: "Capital Mota — Racing & Athletic", label: "RACING × ATHLETIC" },
+const catalogProducts = [
+  { src: catalogLifestyle, alt: "Hoodie Set — Black Gold Collection", label: "HOODIE SET — BLACK GOLD" },
+  { src: catalogFullLineup, alt: "Full Catalog — Hoodies, Crews & Windbreakers", label: "FULL CATALOG — ALL CATEGORIES" },
+  { src: catalogAk47, alt: "AK47 Set — Hoodie & Tee Colorways", label: "AK47 SET — ALL COLORWAYS" },
+  { src: catalogTactical, alt: "Racing Jacket — Tactical & Luxury", label: "RACING JACKET — TACTICAL × LUXURY" },
+  { src: catalogPremium, alt: "Premium Set — Streetwear Collection", label: "PREMIUM SET — STREETWEAR" },
+  { src: catalogRacing, alt: "Varsity Jacket — Racing & Athletic", label: "VARSITY JACKET — RACING × ATHLETIC" },
 ];
 
 const LookbookGallery = () => {
@@ -30,13 +30,13 @@ const LookbookGallery = () => {
             Built in Austin • Worn Worldwide
           </p>
           <h2 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
-            THE LOOKBOOK
+            THE CATALOG
           </h2>
           <div className="w-16 h-px bg-accent mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {galleryImages.map((img, i) => (
+          {catalogProducts.map((img, i) => (
             <motion.div
               key={img.label}
               initial={{ opacity: 0, y: 30 }}
