@@ -36,7 +36,7 @@ const LookbookGallery = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {galleryImages.map((img, i) => (
+          {catalogProducts.map((img, i) => (
             <motion.div
               key={img.label}
               initial={{ opacity: 0, y: 30 }}
