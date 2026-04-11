@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 
 const videos = [
   { src: "/videos/lookbook-1.mp4", title: "THE VISION" },
-  { src: "/videos/promo-clip.mp4", title: "THE CULTURE" },
+  { src: "/videos/lookbook-2.mp4", title: "THE CULTURE" },
+  { src: "/videos/lookbook-3.mp4", title: "THE CRAFT" },
+  { src: "/videos/lookbook-4.mp4", title: "THE MOVEMENT" },
+  { src: "/videos/lookbook-5.mp4", title: "THE LEGACY" },
+  { src: "/videos/lookbook-6.mp4", title: "THE STANDARD" },
 ];
 
 const VideoLookbook = () => {
@@ -25,17 +29,17 @@ const VideoLookbook = () => {
           <div className="w-16 h-px bg-accent mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {videos.map((video, i) => (
             <motion.div
               key={video.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
               className="relative group"
             >
-              <div className="relative overflow-hidden aspect-[16/9]">
+              <div className="relative overflow-hidden aspect-[9/16]">
                 <video
                   autoPlay
                   muted
@@ -47,7 +51,7 @@ const VideoLookbook = () => {
                 </video>
                 <div className="absolute inset-0 bg-background/20 group-hover:bg-background/10 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-display text-2xl md:text-3xl tracking-wider text-foreground drop-shadow-lg">
+                  <h3 className="font-display text-2xl tracking-wider text-foreground drop-shadow-lg">
                     {video.title}
                   </h3>
                 </div>
