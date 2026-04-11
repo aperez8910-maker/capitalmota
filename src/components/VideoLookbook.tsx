@@ -7,6 +7,7 @@ const videos = [
   { src: "/videos/lookbook-4.mp4", title: "THE MOVEMENT" },
   { src: "/videos/lookbook-5.mp4", title: "THE LEGACY" },
   { src: "/videos/lookbook-6.mp4", title: "THE STANDARD" },
+  { src: "/videos/lookbook-7.mp4", title: "THE DRIP" },
 ];
 
 const VideoLookbook = () => {
