@@ -7,12 +7,12 @@ import catalogPremium from "@/assets/catalog-premium-streetwear.png";
 import catalogRacing from "@/assets/catalog-racing-athletic.png";
 
 const catalogProducts = [
-  { src: catalogLifestyle, alt: "Hoodie Set — Black Gold Collection", label: "HOODIE SET — BLACK GOLD" },
-  { src: catalogFullLineup, alt: "Full Catalog — Hoodies, Crews & Windbreakers", label: "FULL CATALOG — ALL CATEGORIES" },
-  { src: catalogAk47, alt: "AK47 Set — Hoodie & Tee Colorways", label: "AK47 SET — ALL COLORWAYS" },
-  { src: catalogTactical, alt: "Racing Jacket — Tactical & Luxury", label: "RACING JACKET — TACTICAL × LUXURY" },
-  { src: catalogPremium, alt: "Premium Set — Streetwear Collection", label: "PREMIUM SET — STREETWEAR" },
-  { src: catalogRacing, alt: "Varsity Jacket — Racing & Athletic", label: "VARSITY JACKET — RACING × ATHLETIC" },
+  { src: catalogLifestyle, alt: "Hoodie Set — Black Gold Collection", label: "HOODIE SET — BLACK GOLD", price: "$85" },
+  { src: catalogFullLineup, alt: "Full Catalog — Hoodies, Crews & Windbreakers", label: "FULL CATALOG — ALL CATEGORIES", price: "FROM $55" },
+  { src: catalogAk47, alt: "AK47 Set — Hoodie & Tee Colorways", label: "AK47 SET — ALL COLORWAYS", price: "FROM $55" },
+  { src: catalogTactical, alt: "Racing Jacket — Tactical & Luxury", label: "RACING JACKET — TACTICAL × LUXURY", price: "$85" },
+  { src: catalogPremium, alt: "Premium Set — Streetwear Collection", label: "PREMIUM SET — STREETWEAR", price: "$75" },
+  { src: catalogRacing, alt: "Varsity Jacket — Racing & Athletic", label: "VARSITY JACKET — RACING × ATHLETIC", price: "$85" },
 ];
 
 const LookbookGallery = () => {
