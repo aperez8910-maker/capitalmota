@@ -5,6 +5,11 @@ import catalogAk47 from "@/assets/catalog-ak47-collection.png";
 import catalogTactical from "@/assets/catalog-tactical-luxury.png";
 import catalogPremium from "@/assets/catalog-premium-streetwear.png";
 import catalogRacing from "@/assets/catalog-racing-athletic.png";
+import catalogWindbreakerOutdoor from "@/assets/catalog-windbreaker-outdoor.png";
+import catalogWindbreakerStudio from "@/assets/catalog-windbreaker-studio.png";
+import catalogWindbreakerPastel from "@/assets/catalog-windbreaker-pastel.png";
+import catalogWindbreakerPastel2 from "@/assets/catalog-windbreaker-pastel-2.png";
+import catalogWindbreakerTrio from "@/assets/catalog-windbreaker-trio.png";
 
 const catalogProducts = [
   { src: catalogLifestyle, alt: "Hoodie Set — Black Gold Collection", label: "HOODIE SET — BLACK GOLD", price: "$85" },
@@ -13,6 +18,11 @@ const catalogProducts = [
   { src: catalogTactical, alt: "Racing Jacket — Tactical & Luxury", label: "RACING JACKET — TACTICAL × LUXURY", price: "$85" },
   { src: catalogPremium, alt: "Premium Set — Streetwear Collection", label: "PREMIUM SET — STREETWEAR", price: "$75" },
   { src: catalogRacing, alt: "Varsity Jacket — Racing & Athletic", label: "VARSITY JACKET — RACING × ATHLETIC", price: "$85" },
+  { src: catalogWindbreakerOutdoor, alt: "Windbreaker Set — Blue Orange White", label: "WINDBREAKER SET — BLUE × ORANGE × WHITE", price: "$85" },
+  { src: catalogWindbreakerStudio, alt: "Windbreaker Set — Sage Pink Gold", label: "WINDBREAKER SET — SAGE × PINK × GOLD", price: "$85" },
+  { src: catalogWindbreakerPastel, alt: "Windbreaker Set — Pastel Collection", label: "WINDBREAKER SET — PASTEL", price: "$85" },
+  { src: catalogWindbreakerPastel2, alt: "Windbreaker Set — Pastel Colorways", label: "WINDBREAKER SET — PASTEL COLORWAYS", price: "$85" },
+  { src: catalogWindbreakerTrio, alt: "Windbreaker Set — Sage Pink Gold Studio", label: "WINDBREAKER SET — STUDIO TRIO", price: "$85" },
 ];
 
 const LookbookGallery = () => {
