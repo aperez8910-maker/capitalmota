@@ -52,9 +52,14 @@ const LookbookGallery = () => {
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/80 to-transparent p-6">
-                <p className="font-display text-lg md:text-xl tracking-wider text-foreground">
-                  {img.label}
-                </p>
+                <div className="flex items-end justify-between">
+                  <p className="font-display text-lg md:text-xl tracking-wider text-foreground">
+                    {img.label}
+                  </p>
+                  <span className="font-display text-lg tracking-wider text-primary">
+                    {img.price}
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
