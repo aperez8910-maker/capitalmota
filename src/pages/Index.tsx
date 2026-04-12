@@ -7,9 +7,6 @@ import CultureBanner from "@/components/CultureBanner";
 import Culture from "@/components/Culture";
 import BrandManifesto from "@/components/BrandManifesto";
 import About from "@/components/About";
-import VideoLookbook from "@/components/VideoLookbook";
-import LookbookGallery from "@/components/LookbookGallery";
-import ShippingInfo from "@/components/ShippingInfo";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import originalLogo from "@/assets/logo.jpeg";
@@ -58,12 +55,9 @@ const Index = () => {
         </div>
       </section>
 
-      <LookbookGallery />
-      <VideoLookbook />
       <BrandManifesto />
       <Culture />
       <About />
-      <ShippingInfo />
       <FAQ />
       <CultureBanner />
       <Footer />
