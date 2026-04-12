@@ -94,9 +94,9 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
           )}
         </div>
       </div>
-      <div className="mt-4">
-        <h3 className="font-display text-xl tracking-wider text-foreground">{name}</h3>
-        <p className="font-body text-muted-foreground mt-1">{price}</p>
+      <div className="mt-3">
+        <h3 className="font-display text-base md:text-lg tracking-wider text-foreground leading-tight">{name}</h3>
+        <p className="font-body text-sm text-muted-foreground mt-0.5">{price}</p>
       </div>
     </motion.div>
   );
