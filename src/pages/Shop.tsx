@@ -115,25 +115,40 @@ const Shop = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Minimal hero */}
-      <section className="pt-28 pb-10 md:pt-36 md:pb-14">
-        <div className="container mx-auto px-6 text-center">
-          <motion.h1
+      {/* Hero with lifestyle imagery */}
+      <section className="pt-24 pb-6 md:pt-32 md:pb-10">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 mb-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="aspect-square overflow-hidden rounded-sm"
+            >
+              <img src={lifestyleColorways} alt="Capital Mota AK47 Collection" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="aspect-square overflow-hidden rounded-sm"
+            >
+              <img src={lifestyleGlobe} alt="Capital Mota Globe Collection" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-display text-7xl md:text-9xl tracking-wider text-foreground"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center"
           >
-            SHOP
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="font-body text-sm text-muted-foreground mt-2 tracking-widest uppercase"
-          >
-            Heavyweight Premium Streetwear
-          </motion.p>
+            <h1 className="font-display text-5xl md:text-7xl tracking-wider text-foreground">
+              SHOP
+            </h1>
+            <p className="font-body text-sm text-muted-foreground mt-2 tracking-widest uppercase">
+              Heavyweight Premium Streetwear
+            </p>
+          </motion.div>
         </div>
       </section>
 
