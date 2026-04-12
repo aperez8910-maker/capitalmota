@@ -58,12 +58,9 @@ const Index = () => {
         </div>
       </section>
 
-      <LookbookGallery />
-      <VideoLookbook />
       <BrandManifesto />
       <Culture />
       <About />
-      <ShippingInfo />
       <FAQ />
       <CultureBanner />
       <Footer />
