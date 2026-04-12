@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -23,7 +23,6 @@ import cwGrayBack from "@/assets/colorway-gray-back.jpg";
 import cwBurgundyBack from "@/assets/colorway-burgundy-back.jpg";
 import cwTanBack from "@/assets/colorway-tan-back.jpg";
 import fwA47Hoodie from "@/assets/fw-a47-hoodie-crewneck.jpeg";
-import fwNavyTee from "@/assets/fw-navy-box-logo-tee.jpeg";
 import fwBlackTeal from "@/assets/fw-black-teal-tee.png";
 import fwRoyalBlue from "@/assets/fw-royal-blue-collection.png";
 import fwBlueBox from "@/assets/fw-blue-box-logo-tee.png";
@@ -37,6 +36,7 @@ import teeUnitedMobColorways from "@/assets/tee-united-mota-mob-colorways.png";
 
 const categories = [
   { id: "all", label: "ALL" },
+  { id: "new", label: "NEW DROPS" },
   { id: "tees", label: "TEES" },
   { id: "kids", label: "KIDS" },
   { id: "colorways", label: "COLORWAYS" },
@@ -49,18 +49,23 @@ type CategoryId = (typeof categories)[number]["id"];
 const COLORWAY_PRICE_ID = "price_1T5wpeJgBXUAVj38znl6YNHq";
 
 const products = [
+  // NEW DROPS — featured first
+  { image: teeAk47TanMockup, name: "AK47 Tee — Black", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628KJgBXUAVj38EK7xKvsq" },
+  { image: teeCapitalHazeTrio, name: "Capital Haze Tee — Red", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628XJgBXUAVj38OMLcoRW5" },
+  { image: teeUnitedMobBlack, name: "United Mota Mob Tee — Black", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628YJgBXUAVj38I7f2SUKz" },
+  { image: teeUnitedMobColorways, name: "United Mota Mob Tee — Olive", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628ZJgBXUAVj385H8Kmuxg" },
+
   // Tees
   { image: teeWhite, name: "Box Logo Tee — White", price: "$55.00", tag: "CLASSIC", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
   { image: teeNavy, name: "Box Logo Tee — Navy", price: "$55.00", tag: "OG", category: "tees", stripePriceId: "price_1T5wnVJgBXUAVj38Zyr6qyjq" },
   { image: teeGold, name: "Banner Tee — Gold", price: "$60.00", tag: "420", category: "tees", stripePriceId: "price_1T5woSJgBXUAVj380pZv5qxm" },
   { image: teeArch, name: "Arch Tee — Austin", price: "$55.00", category: "tees", stripePriceId: "price_1T5wonJgBXUAVj38ic8qRjN0" },
-  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T5wp9JgBXUAVj38PCUwnC8v" },
+  { image: teeRed, name: "Capital Tee — Red", price: "$55.00", category: "tees", stripePriceId: "price_1T5wp9JgBXUAVj38PCUwnC8v" },
+  { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
+  { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
 
   // Kids
   { image: teePink, name: "Capital Tee — Pink (Kids)", price: "$35.00", tag: "YOUTH", category: "kids", stripePriceId: "price_1T5wpOJgBXUAVj381rkrUkty", sizes: ["YS", "YM", "YL"] },
-  { image: fwNavyTee, name: "Box Logo Tee — Navy F/W", price: "$55.00", tag: "OG", category: "tees", stripePriceId: "price_1T5wnVJgBXUAVj38Zyr6qyjq" },
-  { image: fwBlackTeal, name: "Box Logo Tee — Black/Teal", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
-  { image: fwBlueBox, name: "Box Logo Tee — Blue", price: "$55.00", tag: "CLASSIC", category: "tees", stripePriceId: "price_1T5wnHJgBXUAVj38OrWhwvJC" },
 
   // Colorways
   { image: cwWhite, name: "Colorway Tee — White (Front)", price: "$55.00", tag: "FRONT", category: "colorways", stripePriceId: COLORWAY_PRICE_ID },
@@ -84,60 +89,64 @@ const products = [
   { image: fwRoyalBlue, name: "Royal Blue Set", price: "$55.00", tag: "S/S", category: "sets", stripePriceId: "price_1T5ztcJgBXUAVj38WaMeRhmZ" },
   { image: fwBlueLifestyle, name: "Blue Lifestyle Set", price: "$55.00", tag: "UNISEX", category: "sets", stripePriceId: "price_1T5zuSJgBXUAVj38pTzxN27F" },
   { image: fwGrayMinimal, name: "Gray Minimal Set", price: "$75.00", tag: "F/W", category: "sets", stripePriceId: "price_1T5zuZJgBXUAVj3877Fueo46" },
-
-  // New Tees
-  { image: teeAk47TanMockup, name: "AK47 Tee — Black", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628KJgBXUAVj38EK7xKvsq" },
-  { image: teeAk47TanMockup, name: "Capital Tee — Tan", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628XJgBXUAVj38fmBWtxxc" },
-  { image: teeCapitalHazeTrio, name: "Capital Haze Tee — Red", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628XJgBXUAVj38OMLcoRW5" },
-  { image: teeUnitedMobBlack, name: "United Mota Mob Tee — Black", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628YJgBXUAVj38I7f2SUKz" },
-  { image: teeUnitedMobColorways, name: "United Mota Mob Tee — Olive", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628ZJgBXUAVj385H8Kmuxg" },
-  { image: teeUnitedMobColorways, name: "United Mota Mob Tee — Sand", price: "$55.00", tag: "NEW", category: "tees", stripePriceId: "price_1T628aJgBXUAVj38BIKBLjrz" },
 ];
 
 const Shop = () => {
   const [active, setActive] = useState<CategoryId>("all");
+  const gridRef = useRef<HTMLDivElement>(null);
 
-  const filtered = active === "all" ? products : products.filter((p) => p.category === active);
+  const filtered = active === "all"
+    ? products
+    : active === "new"
+      ? products.filter((p) => p.category === "new" || p.tag === "NEW")
+      : products.filter((p) => p.category === active);
+
+  const handleCategory = (id: CategoryId) => {
+    setActive(id);
+    // Smooth scroll to grid on filter change
+    setTimeout(() => {
+      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero banner */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+      {/* Minimal hero */}
+      <section className="pt-28 pb-10 md:pt-36 md:pb-14">
         <div className="container mx-auto px-6 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-3"
-          >
-            Heavyweight Collection
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-6xl md:text-8xl tracking-wider text-foreground"
+            className="font-display text-7xl md:text-9xl tracking-wider text-foreground"
           >
             SHOP
           </motion.h1>
-          <div className="w-16 h-px bg-accent mx-auto mt-6" />
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="font-body text-sm text-muted-foreground mt-2 tracking-widest uppercase"
+          >
+            Heavyweight Premium Streetwear
+          </motion.p>
         </div>
       </section>
 
-      {/* Category filters */}
-      <section className="sticky top-[61px] z-40 bg-background/90 backdrop-blur-md border-b border-border">
+      {/* Category pills — sticky */}
+      <section className="sticky top-[61px] z-40 bg-background/95 backdrop-blur-lg border-b border-border/50">
         <div className="container mx-auto px-6">
-          <div className="flex items-center gap-2 overflow-x-auto py-4 scrollbar-none">
+          <div className="flex items-center gap-1.5 md:gap-2 overflow-x-auto py-3 scrollbar-none md:justify-center">
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActive(cat.id)}
-                className={`font-display text-sm md:text-base tracking-wider px-5 py-2.5 whitespace-nowrap transition-all duration-300 border ${
+                onClick={() => handleCategory(cat.id)}
+                className={`font-display text-xs md:text-sm tracking-wider px-4 py-2 whitespace-nowrap transition-all duration-300 rounded-sm ${
                   active === cat.id
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-transparent text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-transparent text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {cat.label}
@@ -148,38 +157,35 @@ const Shop = () => {
       </section>
 
       {/* Product grid */}
-      <section className="py-12 md:py-20">
+      <section ref={gridRef} className="py-10 md:py-16">
         <div className="container mx-auto px-6">
-          <motion.p
-            key={active}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="font-body text-sm text-muted-foreground mb-8"
-          >
-            {filtered.length} {filtered.length === 1 ? "product" : "products"}
-          </motion.p>
-
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              {filtered.map((product, i) => (
-                <ProductCard
-                  key={product.name}
-                  image={product.image}
-                  name={product.name}
-                  price={product.price}
-                  tag={product.tag}
-                  index={i}
-                  stripePriceId={product.stripePriceId}
-                  sizes={(product as any).sizes}
-                />
-              ))}
+              {/* Count */}
+              <p className="font-body text-xs text-muted-foreground mb-6 tracking-wider uppercase">
+                {filtered.length} {filtered.length === 1 ? "item" : "items"}
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                {filtered.map((product, i) => (
+                  <ProductCard
+                    key={`${active}-${product.name}`}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    tag={product.tag}
+                    index={i}
+                    stripePriceId={product.stripePriceId}
+                    sizes={(product as any).sizes}
+                  />
+                ))}
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
