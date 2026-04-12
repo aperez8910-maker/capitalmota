@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import lifestyleColorways from "@/assets/lifestyle-ak47-colorways.png";
+import lifestyleGlobe from "@/assets/lifestyle-globe-collection.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
