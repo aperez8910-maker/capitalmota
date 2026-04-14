@@ -83,11 +83,22 @@ serve(async (req) => {
           .single();
 
         if (product) {
+          // Find size from session metadata
+          let size = "N/A";
+          const itemCount = parseInt(session.metadata?.item_count || "0");
+          for (let i = 0; i < itemCount; i++) {
+            if (session.metadata?.[`item_${i}_name`] === productName || 
+                item.price?.id === item.price?.id) {
+              size = session.metadata?.[`item_${i}_size`] || "N/A";
+              break;
+            }
+          }
+
           // Insert order item
           await supabase.from("order_items").insert({
             order_id: order.id,
             product_id: product.id,
-            size: "N/A", // Stripe doesn't carry size metadata by default
+            size,
             quantity,
             price,
           });
