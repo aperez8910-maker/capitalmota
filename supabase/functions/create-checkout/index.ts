@@ -28,6 +28,15 @@ serve(async (req) => {
       quantity: item.quantity,
     }));
 
+    // Store item details as metadata for the webhook to use
+    const metadata: Record<string, string> = {};
+    items.forEach((item: { name: string; size: string; quantity: number }, index: number) => {
+      metadata[`item_${index}_name`] = item.name;
+      metadata[`item_${index}_size`] = item.size;
+      metadata[`item_${index}_qty`] = String(item.quantity);
+    });
+    metadata["item_count"] = String(items.length);
+
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
       mode: "payment",
@@ -36,6 +45,7 @@ serve(async (req) => {
       shipping_address_collection: {
         allowed_countries: ["US"],
       },
+      metadata,
     });
 
     return new Response(JSON.stringify({ url: session.url }), {
