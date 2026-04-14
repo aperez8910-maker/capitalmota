@@ -106,6 +106,7 @@ export type Database = {
           name: string
           price: number
           sizes: string[] | null
+          stock: number | null
           stripe_price_id: string | null
           tag: string | null
           updated_at: string
@@ -120,6 +121,7 @@ export type Database = {
           name: string
           price: number
           sizes?: string[] | null
+          stock?: number | null
           stripe_price_id?: string | null
           tag?: string | null
           updated_at?: string
@@ -134,6 +136,7 @@ export type Database = {
           name?: string
           price?: number
           sizes?: string[] | null
+          stock?: number | null
           stripe_price_id?: string | null
           tag?: string | null
           updated_at?: string
@@ -145,7 +148,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      decrement_stock: {
+        Args: { p_product_name: string; p_quantity: number }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
