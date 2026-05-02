@@ -183,7 +183,7 @@ const Shop = () => {
   const filtered = active === "all"
     ? products
     : active === "new"
-      ? products.filter((p) => p.category === "new" || p.tag === "NEW")
+      ? products.filter((p) => p.category === "new" || p.tag === "NEW" || p.category === "tracksuits" || p.category === "cropped" || p.category === "caps")
       : products.filter((p) => p.category === active);
 
   const handleCategory = (id: CategoryId) => {
