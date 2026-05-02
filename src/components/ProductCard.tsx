@@ -2,6 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useCart } from "@/hooks/use-cart";
 
+export interface Colorway {
+  label: string;
+  image: string;
+  stripePriceId: string;
+  name: string;
+}
+
 interface ProductCardProps {
   image: string;
   name: string;
@@ -10,26 +17,33 @@ interface ProductCardProps {
   index: number;
   stripePriceId?: string;
   sizes?: string[];
+  colorways?: Colorway[];
 }
 
 const defaultSizes = ["S", "M", "L", "XL", "2XL"];
 
-const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = defaultSizes }: ProductCardProps) => {
+const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = defaultSizes, colorways }: ProductCardProps) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [showSizes, setShowSizes] = useState(false);
+  const [activeColor, setActiveColor] = useState(0);
   const { addItem } = useCart();
+
+  const current = colorways && colorways.length > 0 ? colorways[activeColor] : null;
+  const activeImage = current?.image ?? image;
+  const activeName = current?.name ?? name;
+  const activePriceId = current?.stripePriceId ?? stripePriceId;
 
   const numericPrice = parseFloat(price.replace("$", ""));
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
     addItem({
-      name,
+      name: activeName,
       price: numericPrice,
-      image,
+      image: activeImage,
       size: selectedSize,
       quantity: 1,
-      stripePriceId,
+      stripePriceId: activePriceId,
     });
     setSelectedSize(null);
     setShowSizes(false);
@@ -45,8 +59,8 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
     >
       <div className="relative overflow-hidden bg-muted aspect-[3/4]">
         <img
-          src={image}
-          alt={name}
+          src={activeImage}
+          alt={activeName}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
@@ -95,8 +109,30 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
         </div>
       </div>
       <div className="mt-3">
-        <h3 className="font-display text-base md:text-lg tracking-wider text-foreground leading-tight">{name}</h3>
+        <h3 className="font-display text-base md:text-lg tracking-wider text-foreground leading-tight">{activeName}</h3>
         <p className="font-body text-sm text-muted-foreground mt-0.5">{price}</p>
+        {colorways && colorways.length > 1 && (
+          <div className="flex flex-wrap gap-1.5 mt-2">
+            {colorways.map((cw, i) => (
+              <button
+                key={cw.label}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveColor(i);
+                  setSelectedSize(null);
+                }}
+                className={`font-display text-[10px] md:text-xs tracking-widest px-2 py-1 border transition-colors ${
+                  activeColor === i
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-transparent text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+                aria-label={`Select ${cw.label} colorway`}
+              >
+                {cw.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );
