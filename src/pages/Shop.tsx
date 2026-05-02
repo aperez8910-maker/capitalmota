@@ -36,9 +36,20 @@ import teeCapitalHazeTrio from "@/assets/tee-capital-haze-trio.png";
 import teeUnitedMobBlack from "@/assets/tee-united-mota-mob-black.png";
 import teeUnitedMobColorways from "@/assets/tee-united-mota-mob-colorways.png";
 
+// New drops — tracksuits, cropped sets, AK47 hoodie sets, caps
+import tracksuitTrioCaps from "@/assets/tracksuit-trio-caps.jpg";
+import tracksuitBlueOrangeWhite from "@/assets/tracksuit-blue-orange-white.jpg";
+import croppedTracksuitTrio from "@/assets/cropped-tracksuit-trio.jpg";
+import croppedTracksuitFull from "@/assets/cropped-tracksuit-full.jpg";
+import ak47HoodieYellowCamo from "@/assets/ak47-hoodie-yellow-camo.jpg";
+import ak47HoodieGrid from "@/assets/ak47-hoodie-grid.jpg";
+
 const categories = [
   { id: "all", label: "ALL" },
   { id: "new", label: "NEW DROPS" },
+  { id: "tracksuits", label: "TRACKSUITS" },
+  { id: "cropped", label: "HER" },
+  { id: "caps", label: "CAPS" },
   { id: "tees", label: "TEES" },
   { id: "kids", label: "KIDS" },
   { id: "colorways", label: "COLORWAYS" },
@@ -51,6 +62,78 @@ type CategoryId = (typeof categories)[number]["id"];
 const COLORWAY_PRICE_ID = "price_1T5wpeJgBXUAVj38znl6YNHq";
 
 const products = [
+  // NEW: Capital Mota Tracksuit (full set) — colorway selector
+  {
+    image: tracksuitTrioCaps,
+    name: "Capital Mota Tracksuit",
+    price: "$145.00",
+    tag: "NEW",
+    category: "tracksuits",
+    stripePriceId: "price_1TSVqrJgBXUAVj38N8CfPrAh",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    colorways: [
+      { label: "SAGE", image: tracksuitTrioCaps, stripePriceId: "price_1TSVqrJgBXUAVj38N8CfPrAh", name: "Capital Mota Tracksuit — Sage" },
+      { label: "PINK", image: tracksuitTrioCaps, stripePriceId: "price_1TSVqrJgBXUAVj38YywP4rGk", name: "Capital Mota Tracksuit — Pink" },
+      { label: "AK47 LAVENDER", image: tracksuitTrioCaps, stripePriceId: "price_1TSVqtJgBXUAVj38ssI93woa", name: "Capital Mota Tracksuit — AK47 Lavender" },
+      { label: "ROYAL BLUE", image: tracksuitBlueOrangeWhite, stripePriceId: "price_1TSVquJgBXUAVj3855kXgjZ5", name: "Capital Mota Tracksuit — Royal Blue" },
+      { label: "ORANGE", image: tracksuitBlueOrangeWhite, stripePriceId: "price_1TSVqvJgBXUAVj38s1tMdu27", name: "Capital Mota Tracksuit — Orange" },
+      { label: "WHITE AK47", image: tracksuitBlueOrangeWhite, stripePriceId: "price_1TSVqwJgBXUAVj38gGHtVjOw", name: "Capital Mota Tracksuit — White AK47" },
+    ],
+  },
+
+  // NEW: Cropped Tracksuit — HER collection
+  {
+    image: croppedTracksuitFull,
+    name: "Cropped Tracksuit — HER",
+    price: "$135.00",
+    tag: "HER",
+    category: "cropped",
+    stripePriceId: "price_1TSVqxJgBXUAVj38X9dVTvUM",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    colorways: [
+      { label: "SAGE", image: croppedTracksuitFull, stripePriceId: "price_1TSVqxJgBXUAVj38X9dVTvUM", name: "Cropped Tracksuit — Sage" },
+      { label: "PINK", image: croppedTracksuitTrio, stripePriceId: "price_1TSVqyJgBXUAVj38GeyiFCRQ", name: "Cropped Tracksuit — Pink" },
+      { label: "AK47", image: croppedTracksuitTrio, stripePriceId: "price_1TSVqzJgBXUAVj38LI7NE0Fc", name: "Cropped Tracksuit — AK47 Black/Yellow" },
+    ],
+  },
+
+  // NEW: AK47 Hoodie Set
+  {
+    image: ak47HoodieYellowCamo,
+    name: "AK47 Hoodie Set",
+    price: "$95.00",
+    tag: "AK47",
+    category: "sets",
+    stripePriceId: "price_1TSVr1JgBXUAVj38JQwUaVRF",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    colorways: [
+      { label: "YELLOW CAMO", image: ak47HoodieYellowCamo, stripePriceId: "price_1TSVr1JgBXUAVj38JQwUaVRF", name: "AK47 Hoodie Set — Black/Yellow Camo" },
+      { label: "YELLOW STRIPE", image: ak47HoodieGrid, stripePriceId: "price_1TSVr2JgBXUAVj38bFLPRMuu", name: "AK47 Hoodie Set — Black/Yellow Stripe" },
+      { label: "BLACK STRIPE", image: ak47HoodieGrid, stripePriceId: "price_1TSVr3JgBXUAVj38vyOBETDh", name: "AK47 Hoodie Set — Black/White Stripe" },
+      { label: "WHITE STRIPE", image: ak47HoodieGrid, stripePriceId: "price_1TSVr4JgBXUAVj38oP85H82J", name: "AK47 Hoodie Set — White/Black Stripe" },
+      { label: "BLACK", image: ak47HoodieGrid, stripePriceId: "price_1TSVr5JgBXUAVj38Zj1jX5ke", name: "AK47 Hoodie Set — Black" },
+      { label: "WHITE", image: ak47HoodieGrid, stripePriceId: "price_1TSVr6JgBXUAVj38Zw2d5EKE", name: "AK47 Hoodie Set — White" },
+    ],
+  },
+
+  // NEW: Austin TX MOTA Cap
+  {
+    image: tracksuitTrioCaps,
+    name: "Austin TX MOTA Cap",
+    price: "$45.00",
+    tag: "CAP",
+    category: "caps",
+    stripePriceId: "price_1TSVr8JgBXUAVj38X4h9maxt",
+    sizes: ["One Size"],
+    colorways: [
+      { label: "BLACK / WHITE", image: tracksuitTrioCaps, stripePriceId: "price_1TSVr8JgBXUAVj38X4h9maxt", name: "Austin TX MOTA Cap — Black/White" },
+      { label: "BLACK / RED", image: tracksuitTrioCaps, stripePriceId: "price_1TSVrAJgBXUAVj38ARQsG8OD", name: "Austin TX MOTA Cap — Black/Red" },
+      { label: "LAVENDER", image: tracksuitTrioCaps, stripePriceId: "price_1TSVrAJgBXUAVj38q0UCAyxD", name: "Austin TX MOTA Cap — Lavender" },
+      { label: "BLACK / YELLOW", image: croppedTracksuitTrio, stripePriceId: "price_1TSVrCJgBXUAVj38qmKXDWWq", name: "Austin TX MOTA Cap — Black/Yellow" },
+      { label: "WHITE", image: tracksuitBlueOrangeWhite, stripePriceId: "price_1TSVrCJgBXUAVj38BORJIkn2", name: "Austin TX MOTA Cap — White" },
+    ],
+  },
+
   // NEW DROPS — featured first
   { image: teeAk47TanMockup, name: "AK47 Tee — Black", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628KJgBXUAVj38EK7xKvsq" },
   { image: teeCapitalHazeTrio, name: "Capital Haze Tee — Red", price: "$55.00", tag: "NEW", category: "new", stripePriceId: "price_1T628XJgBXUAVj38OMLcoRW5" },
@@ -100,7 +183,7 @@ const Shop = () => {
   const filtered = active === "all"
     ? products
     : active === "new"
-      ? products.filter((p) => p.category === "new" || p.tag === "NEW")
+      ? products.filter((p) => p.category === "new" || p.tag === "NEW" || p.category === "tracksuits" || p.category === "cropped" || p.category === "caps")
       : products.filter((p) => p.category === active);
 
   const handleCategory = (id: CategoryId) => {
@@ -200,6 +283,7 @@ const Shop = () => {
                     index={i}
                     stripePriceId={product.stripePriceId}
                     sizes={(product as any).sizes}
+                    colorways={(product as any).colorways}
                   />
                 ))}
               </div>
