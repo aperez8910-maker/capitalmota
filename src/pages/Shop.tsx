@@ -177,7 +177,7 @@ const products = [
 ];
 
 const Shop = () => {
-  const [active, setActive] = useState<CategoryId>("all");
+  const [active, setActive] = useState<CategoryId>("new");
   const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = active === "all"
