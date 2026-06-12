@@ -47,6 +47,9 @@ const App = () => (
         </AdminAuthProvider>
       </CartProvider>
     </TooltipProvider>
+<div className="fixed bottom-3 right-3 z-50 rounded-full border border-white/10 bg-black/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/60 backdrop-blur">
+  Built by Alexander Emilio Perez
+</div>
   </QueryClientProvider>
 );
 
