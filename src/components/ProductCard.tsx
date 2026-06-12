@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useCart } from "@/hooks/use-cart";
+import SizeGuideModal from "./SizeGuideModal";
 
 export interface Colorway {
   label: string;
@@ -18,15 +19,19 @@ interface ProductCardProps {
   stripePriceId?: string;
   sizes?: string[];
   colorways?: Colorway[];
+  stock?: number;
 }
 
 const defaultSizes = ["S", "M", "L", "XL", "2XL"];
 
-const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = defaultSizes, colorways }: ProductCardProps) => {
+const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = defaultSizes, colorways, stock }: ProductCardProps) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [showSizes, setShowSizes] = useState(false);
   const [activeColor, setActiveColor] = useState(0);
   const { addItem } = useCart();
+
+  const soldOut = typeof stock === "number" && stock <= 0;
+  const lowStock = typeof stock === "number" && stock > 0 && stock <= 5;
 
   const current = colorways && colorways.length > 0 ? colorways[activeColor] : null;
   const activeImage = current?.image ?? image;
@@ -36,7 +41,7 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
   const numericPrice = parseFloat(price.replace("$", ""));
 
   const handleAddToCart = () => {
-    if (!selectedSize) return;
+    if (!selectedSize || soldOut) return;
     addItem({
       name: activeName,
       price: numericPrice,
@@ -69,16 +74,27 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
             {tag}
           </span>
         )}
+        {soldOut && (
+          <span className="absolute top-4 right-4 font-display text-xs tracking-wider px-3 py-1 bg-foreground text-background">
+            SOLD OUT
+          </span>
+        )}
+        {!soldOut && lowStock && (
+          <span className="absolute top-4 right-4 font-display text-xs tracking-wider px-3 py-1 bg-destructive text-destructive-foreground">
+            LOW STOCK
+          </span>
+        )}
         <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500" />
 
-        {/* Add to cart overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+        {/* Add to cart overlay — always visible on mobile, hover-reveal on desktop */}
+        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500">
           {!showSizes ? (
             <button
-              onClick={() => setShowSizes(true)}
-              className="w-full font-display text-lg tracking-wider py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              onClick={() => !soldOut && setShowSizes(true)}
+              disabled={soldOut}
+              className="w-full font-display text-base md:text-lg tracking-wider py-2.5 md:py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:bg-muted disabled:text-muted-foreground"
             >
-              SELECT SIZE
+              {soldOut ? "SOLD OUT" : "SELECT SIZE"}
             </button>
           ) : (
             <div className="space-y-2">
@@ -110,7 +126,19 @@ const ProductCard = ({ image, name, price, tag, index, stripePriceId, sizes = de
       </div>
       <div className="mt-3">
         <h3 className="font-display text-base md:text-lg tracking-wider text-foreground leading-tight">{activeName}</h3>
-        <p className="font-body text-sm text-muted-foreground mt-0.5">{price}</p>
+        <div className="flex items-center justify-between mt-0.5">
+          <p className="font-body text-sm text-muted-foreground">{price}</p>
+          <SizeGuideModal
+            trigger={
+              <button
+                onClick={(e) => e.stopPropagation()}
+                className="font-body text-[10px] md:text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
+              >
+                Size Guide
+              </button>
+            }
+          />
+        </div>
         {colorways && colorways.length > 1 && (
           <div className="flex flex-wrap gap-1.5 mt-2">
             {colorways.map((cw, i) => (
