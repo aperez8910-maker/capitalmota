@@ -11,6 +11,13 @@ const corsHeaders = {
 const MAX_QUANTITY_PER_ITEM = 10;
 const MAX_CART_ITEMS = 20;
 
+const ALLOWED_ORIGINS = new Set([
+  "https://capitalmota.com",
+  "https://www.capitalmota.com",
+  "https://capitalmota.lovable.app",
+]);
+const DEFAULT_ORIGIN = "https://capitalmota.com";
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -79,11 +86,14 @@ serve(async (req) => {
     });
     metadata["item_count"] = String(items.length);
 
+    const requestOrigin = req.headers.get("origin") || "";
+    const origin = ALLOWED_ORIGINS.has(requestOrigin) ? requestOrigin : DEFAULT_ORIGIN;
+
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
       mode: "payment",
-      success_url: `${req.headers.get("origin")}/payment-success`,
-      cancel_url: `${req.headers.get("origin")}/payment-canceled`,
+      success_url: `${origin}/payment-success`,
+      cancel_url: `${origin}/payment-canceled`,
       shipping_address_collection: {
         allowed_countries: ["US"],
       },
@@ -95,8 +105,16 @@ serve(async (req) => {
       status: 200,
     });
   } catch (error) {
-    const status = error.message?.includes("Invalid product") || error.message?.includes("Insufficient stock") ? 400 : 500;
-    return new Response(JSON.stringify({ error: error.message }), {
+    console.error("Checkout error:", error);
+    const msg = (error as Error)?.message || "";
+    const isUserError =
+      msg.includes("Invalid product") ||
+      msg.includes("Insufficient stock") ||
+      msg.includes("No items provided") ||
+      msg.startsWith("Maximum");
+    const status = isUserError ? 400 : 500;
+    const safeMessage = isUserError ? msg : "Checkout processing failed";
+    return new Response(JSON.stringify({ error: safeMessage }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status,
     });
