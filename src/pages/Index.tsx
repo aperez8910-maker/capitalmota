@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import MusicPlayer from "@/components/MusicPlayer";
@@ -9,6 +10,7 @@ import BrandManifesto from "@/components/BrandManifesto";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import NewArrivals from "@/components/NewArrivals";
 import originalLogo from "@/assets/logo.jpeg";
 import brandLogo from "@/assets/brand-logo.png";
 import seal from "@/assets/brand-seal.jpeg";
@@ -16,9 +18,17 @@ import seal from "@/assets/brand-seal.jpeg";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Capital Mota Clothing | Heavyweight 420 Streetwear from Austin TX</title>
+        <meta name="description" content="Premium heavyweight streetwear from Austin, TX. Pro Club tees, AK47 hoodie sets, tracksuits, and limited colorway drops." />
+        <link rel="canonical" href="https://capitalmota.com/" />
+        <meta property="og:url" content="https://capitalmota.com/" />
+      </Helmet>
       <Navbar />
       <Hero />
       <CultureBanner />
+
+      <NewArrivals />
 
       {/* Shop CTA Section */}
       <section className="py-24 md:py-32">
