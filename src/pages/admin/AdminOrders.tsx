@@ -46,7 +46,14 @@ export default function AdminOrders() {
   const exportCSV = () => {
     const rows = [['Order ID', 'Email', 'Status', 'Total', 'Date']];
     filtered.forEach(o => rows.push([o.id, o.email, o.status, o.total, o.created_at]));
-    const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+    const sanitizeCell = (v: unknown) => {
+      const s = String(v ?? '');
+      // Prefix cells starting with formula-trigger chars to neutralize CSV formula injection
+      return /^[=+\-@\t\r]/.test(s) ? `'${s}` : s;
+    };
+    const csv = rows
+      .map(r => r.map(c => `"${sanitizeCell(c).replace(/"/g, '""')}"`).join(','))
+      .join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
