@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import lifestyleColorways from "@/assets/lifestyle-ak47-colorways.png";
 import lifestyleGlobe from "@/assets/lifestyle-globe-collection.png";
 import Navbar from "@/components/Navbar";
@@ -196,6 +197,14 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Shop New Drops | Capital Mota Clothing — Austin TX</title>
+        <meta name="description" content="Shop the latest Capital Mota drops — tracksuits, AK47 hoodie sets, HER cropped sets, caps, and heavyweight Pro Club tees." />
+        <link rel="canonical" href="https://capitalmota.com/shop" />
+        <meta property="og:url" content="https://capitalmota.com/shop" />
+        <meta property="og:title" content="Shop New Drops | Capital Mota Clothing" />
+        <meta property="og:description" content="Tracksuits, AK47 hoodie sets, HER cropped sets, caps, and heavyweight Pro Club tees." />
+      </Helmet>
       <Navbar />
 
       {/* Hero with lifestyle imagery */}
