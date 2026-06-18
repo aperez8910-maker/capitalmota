@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useCart } from "@/hooks/use-cart";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PaymentSuccess = () => {
+  const { clearCart, setIsOpen } = useCart();
+
+  useEffect(() => {
+    // Cart is fulfilled — clear it and make sure the drawer isn't open.
+    clearCart();
+    setIsOpen(false);
+  }, [clearCart, setIsOpen]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
