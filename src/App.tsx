@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCanceled from "./pages/PaymentCanceled";
+import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
 import CartDrawer from "./components/CartDrawer";
 import AdminLogin from "./pages/AdminLogin";
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/shop" element={<Shop />} />
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/payment-canceled" element={<PaymentCanceled />} />
+              <Route path="/orders" element={<Orders />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<AdminOverview />} />
