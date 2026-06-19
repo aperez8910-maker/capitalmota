@@ -5,6 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PaymentCanceled = () => {
+  // Note: no cart rollback needed. Stock is only decremented in the Stripe
+  // webhook after `checkout.session.completed`, so an abandoned checkout
+  // leaves both cart state and product stock untouched.
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
