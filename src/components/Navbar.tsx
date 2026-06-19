@@ -38,6 +38,12 @@ const Navbar = () => {
           >
             Shop
           </Link>
+          <Link
+            to="/orders"
+            className="font-body text-sm uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            Orders
+          </Link>
           {scrollLinks.map((link) => (
             <a
               key={link.label}
