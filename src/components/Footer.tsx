@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { Link2, Check } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import originalLogo from "@/assets/logo.jpeg";
 import logo from "@/assets/brand-logo.png";
 import seal from "@/assets/brand-seal.jpeg";
+
+const SITE_URL = "https://capitalmota.com";
 
 const Footer = () => {
   return (
