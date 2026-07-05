@@ -56,6 +56,7 @@ const Footer = () => {
                   {social}
                 </a>
               ))}
+              <ShareSiteButton />
             </div>
           </div>
         </div>
