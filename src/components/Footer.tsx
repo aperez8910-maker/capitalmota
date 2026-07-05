@@ -1,7 +1,37 @@
 import { Link } from "react-router-dom";
+import { Link2, Check } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import originalLogo from "@/assets/logo.jpeg";
 import logo from "@/assets/brand-logo.png";
 import seal from "@/assets/brand-seal.jpeg";
+
+const SITE_URL = "https://capitalmota.com";
+
+const ShareSiteButton = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(SITE_URL);
+      setCopied(true);
+      toast.success("Link copied — share away!");
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      toast.error("Could not copy link.");
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="flex items-center gap-2 font-body text-sm text-primary hover:text-primary/80 transition-colors"
+    >
+      {copied ? <Check size={14} /> : <Link2 size={14} />}
+      <span>{copied ? "Copied!" : "Use this link"}</span>
+    </button>
+  );
+};
 
 const Footer = () => {
   return (
@@ -51,6 +81,7 @@ const Footer = () => {
                   {social}
                 </a>
               ))}
+              <ShareSiteButton />
             </div>
           </div>
         </div>
